@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Demandas </title>
+  <link rel="stylesheet" href="Css/Pagina-04.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <nav>
+      <div class="navbar">
+        <i class='bx bx-menu'></i>
+        <div class="logo"><a href="Pagina-03-inicial.html">Gestão de Demandas</a></div>
+        <div class="nav-links">
+          <div class="sidebar-logo">
+            <span class="logo-name"></span>
+            <i class='bx bx-x' ></i>
+          </div>
+          <ul class="links">
+            <li><a href="Pagina-03-inicial.html">Inicio</a></li>
+            <li><a href="Pagina-04-demandas.html">Demandas</a></li>
+            <li>
+              <a href="#">Turmas e Cursos</a>
+              <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+              <ul class="htmlCss-sub-menu sub-menu">
+                <li class="more">
+                  <span><a href="#">Superior</a>
+                    <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                  </span>
+                  <ul class="more-sub-menu sub-menu">
+                    <li><a href="#">TADS</a></li>
+                    <li><a href="#">Matemática</a></li>
+                    <li><a href="#">Biologia</a></li>
+                  </ul>
+                </li>
+                <li><a href="#"></a></li>
+                <li class="more">
+                  <span><a href="#">Médio</a>
+                  <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                </span>
+                  <ul class="more-sub-menu sub-menu">
+                    <li><a href="#">Subsequente</a></li>
+                    <li><a href="#">Teste</a></li>
+                    <li><a href="#">Teste</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Cadastros</a>
+              <i class='bx bxs-chevron-down js-arrow arrow '></i>
+              <ul class="js-sub-menu sub-menu">
+                <li><a href="#">Professores</a></li>
+                <li><a href="#">Diciplinas</a></li>
+                <li><a href="#">Observações</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="Pagina-01.html">Sair</a></li>
+          </ul>
+        </div>
+        <div class="search-box">
+          <i class='bx bx-search'></i>
+          <div class="input-box">
+            <input type="text" placeholder="Pesquisar...">
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="table__header">
+        <h1>Demandas de Diciplinas do Periodo Letivo</h1>
+    </div>
+
+    <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    <th> Tuma </th>
+                    <th> Diciplinas </th>
+                    <th> Laboratório </th>
+                    <th> Carga Horária </th>
+                    <th> AS </th>
+                    <th> Professor </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 4102 </td>
+                    <td>Sistemas Operacionais - 1º Sem (20h; 1h) e 2º Sem (40h; 2h)</td>
+                    <td> Sim </td>
+                    <td> 40 </td> 
+                    <td> <strong> 2 </strong></td>
+                    <td>
+                        <p class="status">Alex de Carvalho Matos</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4311 </td>
+                    <td>Prática e Gerência de Redes - Anual (40h)</td>
+                    <td> Sim </td>
+                    <td> 20 </td>
+                    <td> <strong>1</strong> </td>
+                    <td>
+                        <p class="status">Alex de Carvalho Matos</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4311 </td>
+                    <td>Projetos em Informática (Núcleo integrado) e 
+                        Complementar III - Anual - compartilhada - 1semestre </td>
+                    <td> Não </td>
+                    <td> 20 </td>
+                    <td> <strong>1</strong> </td>
+                    <td>
+                        <p class="status delivered">Alex de Carvalho Matos</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> TDS - I (novo) </td>
+                    <td> Fundamentos de Informática e Redes </td>
+                    <td> Não </td>
+                    <td> 80 </td>
+                    <td> <strong> 4 </strong> </td>
+                    <td>
+                        <p class="status delivered"> Alex de Carvalho Matos </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 3102 </td>
+                    <td> Tecnologias dos Controles e Processos Industriais - Integrado - Anual </td>
+                    <td> Sim </td>
+                    <td> 40 </td>
+                    <td> <strong> 2 </strong> </td>
+                    <td>
+                        <p class="status"> Alex de Carvalho Matos </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 2201 </td>
+                    <td> Tecnologia da Informação e Comuni. Construção Civil - Anual </td>
+                    <td> Sim </td>
+                    <td> 40 </td>
+                    <td> <strong> 2 </strong> </td>
+                    <td>
+                        <p class="status cancelled"> Alex de Carvalho Matos </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 7211 </td>
+                    <td> Tecnologias da Infomação e Comunicação em Temática Ambiental - Anual </td>
+                    <td> Sim </td>
+                    <td> 40 </td>
+                    <td> <strong> 2 </strong> </td>
+                    <td>
+                        <p class="status"> Alex de Carvalho Matos </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4101 </td>
+                    <td> Princípios Científico da Informática - Anual (André Castro e André Melo) </td>
+                    <td> Não </td>
+                    <td> 20 </td>
+                    <td> <strong> 1 </strong> </td>
+                    <td>
+                        <p class="status pending"> André Francisco Coelho Castro </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4102 </td>
+                    <td> Princípios Científico da Informática - Anual (André Castro e André Melo) </td>
+                    <td> Não </td>
+                    <td> 20 </td>
+                    <td> <strong> 1 </strong> </td>
+                    <td>
+                        <p class="status pending"> André Francisco Coelho Castro </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> TADS 2 (novo) </td>
+                    <td> Estruturas de Dados I </td>
+                    <td> Sim </td>
+                    <td> 60 </td>
+                    <td> <strong> 3 </strong> </td>
+                    <td>
+                        <p class="status"> André Francisco Coelho Castro </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4101 </td>
+                    <td> Princípios Científico da Informática - Anual  (André Castro e André Melo)</td>
+                    <td> Não </td>
+                    <td> 20 </td>
+                    <td> <strong> 1 </strong> </td>
+                    <td>
+                        <p class="status pending"> André Mello </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4102 </td>
+                    <td> Princípios Científico da Informática - Anual (André Castro e André Melo) </td>
+                    <td> Não </td>
+                    <td> 20 </td>
+                    <td> <strong> 1 </strong> </td>
+                    <td>
+                        <p class="status pending"> André Mello </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4101 </td>
+                    <td> Algortimos e Lógica de Programação - 1º sem (2h, 40h) e 2º sem (3h, 60h) </td>
+                    <td> Sim </td>
+                    <td> 60 </td>
+                    <td> <strong> 3 </strong> </td>
+                    <td>
+                        <p class="status"> Elane Cristina da Rocha Cardoso Saraiva </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4102 </td>
+                    <td> Algortimos e Lógica de Programação - 1º sem (2h, 40h) e 2º sem (3h, 60h) </td>
+                    <td> Sim </td>
+                    <td> 60 </td>
+                    <td> <strong> 3 </strong> </td>
+                    <td>
+                        <p class="status"> Elane Cristina da Rocha Cardoso Saraiva </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4211 </td>
+                    <td> Introdução à Programação Web - Anual </td>
+                    <td> Sim </td>
+                    <td> 40 </td>
+                    <td> <strong> 2 </strong> </td>
+                    <td>
+                        <p class="status shipped"> Elane Cristina da Rocha Cardoso Saraiva </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4311 </td>
+                    <td> Tópicos Especiais em Desenvolvimento -1º Sem (2h, 40h) e 2º sem (3h, 60h) </td>
+                    <td> Sim</td>
+                    <td> 60 </td>
+                    <td> <strong> 3 </strong> </td>
+                    <td>
+                        <p class="status shipped"> Elane Cristina da Rocha Cardoso Saraiva </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 50121 </td>
+                    <td> Informática Básica - Téc. Sub. em Eletromecânica - Noturno </td>
+                    <td> Sim </td>
+                    <td> 60 </td>
+                    <td> <strong> 2 </strong> </td>
+                    <td>
+                        <p class="status cancelled"> Em 2022-2 não foi ofertada </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 51121 </td>
+                    <td> Informática Básica - Téc. Sub. em Edificações - Noturno </td>
+                    <td> Sim </td>
+                    <td> 60 </td>
+                    <td> <strong> 2 </strong> </td>
+                    <td>
+                        <p class="status cancelled"> Em 2022-2 não foi ofertada. A coord. falou que não consta mais essa disciplina no PPC </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+  
+    <footer>
+      <div class="container-inferior">
+          <div class="top">
+                  <div class="brand">
+                        <a href="#" class="logo">Gestão de Demandas</a>
+                        <p>
+                          Sistema Online de Gestão de Demandas de Disciplinas do Instituto Federal do Piaui
+                          Campus Floriano.
+                        </p>
+                        <ul class="social-media">
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                        </ul>  
+                  </div>
+                <div class="links">
+                    <h4>Links</h4>
+                    <ul class="link-list">
+                        <li>
+                            <a href="#">Sobre</a>
+                        </li>
+                        <li>
+                            <a href="#">Serviços</a>
+                        </li>
+                        <li>
+                            <a href="#">Características</a>
+                        </li>
+                        <li>
+                            <a href="#">Site</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact">
+                    <h4>Localização</h4>
+                    <ul class="contact-list">
+                        <li>Cidade: Floriano PI</li>
+                        <li>Rua: Francisco Urquiza Machado, 462</li>
+                        <li>Email: tec.log@gmail.com</li>
+                        <li>Phone: +5589 9 9497-0001</li>
+                    </ul>
+                </div>
+                <div class="newsletter">
+                    <h4>Entre em contato</h4>
+                    <form action="">
+                        <div class="form">
+                            <input type="email" placeholder="Email">
+                            <button type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+          <hr>
+          <div class="bottom"> 
+              <p><a href="#">Termos</a> | <a href="#">Politica de privacidade</a></p> 
+              <p>Gestão de Demandas - IFPI Campus Floriano &copy; 2023</p>  
+          </div>
+      </div>
+    </footer>
+    
+    <script src="Scripts/Pagina-04.js"></script>
+  </body>
+
+</html>

@@ -4,9 +4,12 @@
 :root {
     --dark: #0e0b0c;
     --light: #555;
-    --Roxo: #7d2ae8;
     --cinza: #ccc;
+    --cinzaClaro: #EEEEEE;
     --branco: #fff;
+    --azulClaro: #3DAD91;
+    --azulEscuro: #163C34;
+    --azulEsverdiado: #00684E;
 }
 
 * {
@@ -26,17 +29,18 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    background: var(--cinza);
+    background: var(--cinzaClaro);
 }
 
 .logo {
     font-size: 2em;
-    color: #555;
+    color: var(--light);
     cursor: default;
 }
 
 .logo span {
-    color: var(--Roxo);
+    color: var(--azulClaro);
+    font-size: 40px;
 }
 
 .navigation {
@@ -60,14 +64,14 @@ header {
     color: #fff;
     text-decoration: none;
     padding: 8px 35px;
-    background: #7d2ae8;
+    background: var(--azulClaro);
     border-radius: 10px;
-    border: 2px solid #7d2ae8;
+    border: 2px solid var(--azulClaro);
     font-weight: 500;
 }
 
 .btn-talk:hover {
-    color: #7d2ae8;
+    color: var(--azulClaro);
     background: transparent;
 }
 
@@ -93,7 +97,7 @@ header {
 }
 
 .content h2 span {
-    color: #7d2ae8;
+    color: var(--azulClaro);
 }
 
 .content h4 {
@@ -108,20 +112,20 @@ header {
     color: #fff;
     text-decoration: none;
     padding: 10px 40px;
-    background: #7d2ae8;
+    background: var(--azulClaro);
     border-radius: 10px;
-    border: 2px solid #7d2ae8;
+    border: 2px solid var(--azulClaro);
     font-weight: 500;
     transition: 1s;
 }
 
 .btn-group a:hover:nth-child(1) {
-    color: #7d2ae8;
+    color: var(--azulClaro);
     background: transparent;
 }
 
 .btn-group a:nth-child(2) {
-    color: #7d2ae8;
+    color: var(--azulClaro);
     background: transparent;
     margin-left: 30px;
     padding: 10px 30px;
@@ -129,7 +133,7 @@ header {
 
 .btn-group a:hover:nth-child(2) {
     color: #fff;
-    background: #7d2ae8;
+    background: var(--azulClaro);
 }
 
 .social-icons {
@@ -141,13 +145,13 @@ header {
     display: inline-block;
     width: 35px;
     height: 35px;
-    background: #7d2ae8;
+    background: var(--azulClaro);
     border-radius: 50%;
     margin-right: 22px;
     text-align: center;
     line-height: 35px;
     border: 1px solid #fff;
-    outline: 2px solid #7d2ae8;
+    outline: 2px solid var(--azulClaro);
     transition: .3s;
 }
 
@@ -171,7 +175,7 @@ header {
 footer {
     width: 100%;
     padding: 36px 0 24px;
-    background: var(--cinza);
+    background: var(--cinzaClaro);
 }
 
 footer .top {
@@ -188,6 +192,7 @@ footer .top li,
 footer .top a {
     color: var(--light);
     transition: .3s ease;
+    text-decoration: none;
 }
 
 footer .top h4 {
@@ -200,7 +205,7 @@ footer .top li {
 }
 
 footer .top a:hover {
-    color: var(--Roxo);
+    color: var(--azulClaro);
 }
 
 footer .top .brand .logo {
@@ -254,7 +259,7 @@ footer .top .newsletter form button {
     border: none;
     outline: none;
     color: #fff;
-    background: var(--Roxo);
+    background: var(--azulClaro);
     font-weight: 500;
     font-size: 13px;
     cursor: pointer;
