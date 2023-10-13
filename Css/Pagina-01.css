@@ -34,7 +34,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    background: var(--cinzaClaro);
+    background: var(--cinza);
 }
 
 .logo {
@@ -141,7 +141,7 @@ header {
 footer {
     width: 100%;
     padding: 36px 0 24px;
-    background: var(--cinzaClaro);
+    background: var(--cinza);
 }
 
 footer .top {

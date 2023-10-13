@@ -7,20 +7,11 @@
   --cinza: #ccc;
   --cinzaClaro: #EEEEEE;
   --branco: #fff;
-  --azulClaro: #3DAD91;
-  --azulEscuro: #163C34;
-  --azulEsverdiado: #00684E;
 
   --Azul: #0CB0FF;
   --AzulEscuro: #00476A;
   --AzulClaro: #77D3FF;
   --AzulClarinho: #A8E3FF;
-
-  --orange-color: #fa8e3f;
-  --grey: #b8b7bc;
-  --light-grey-color: #f3f5f1;
-  --dark-blue: #020125;
-  --caribb-green-color: #02bfae;
 
 }
 
@@ -324,7 +315,7 @@ button{
       -ms-flex-pack: center;
           justify-content: center;
   background-color: var(--branco);
-  color: var(--grey);
+  color: var(--AzulEscuro);
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -413,12 +404,12 @@ button{
           box-shadow: 0 1px 0 0 #8a1f23;
 }
 
-/* ----------------- address list -------------------- */
+/* ----------------- Lista de Professores -------------------- */
 
 .addr-book{
   padding: 1.4rem;
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: 1600px;
   min-width: 700px!important;
 }
 
@@ -444,10 +435,11 @@ button{
 
 .addr-book-head h2{
   font-size: 2.2rem;
+  color: var(--AzulEscuro);
 }
 
 .addr-book-head i{
-  color: var(--Azul);
+  color: var(--AzulEscuro);
   margin-right: 1rem;
 }
 
@@ -463,16 +455,16 @@ button{
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
   background-color: var(--Azul);
-  -webkit-box-shadow: 0 2px 0 0 #0CB0FF;
-          box-shadow: 0 2px 0 0 #0CB0FF;
+  -webkit-box-shadow: 0 2px 0 0 #00476A;
+          box-shadow: 0 2px 0 0 #00476A;
 }
 
 .addr-book-top .btn:hover{
   -webkit-transform: translateY(1px);
       -ms-transform: translateY(1px);
           transform: translateY(1px);
-  -webkit-box-shadow: 0 1px 0 0 #0CB0FF;
-          box-shadow: 0 1px 0 0 #0CB0FF;
+  -webkit-box-shadow: 0 1px 0 0 #00476A;
+          box-shadow: 0 1px 0 0 #00476A;
 }
 
 .addr-book-list{
@@ -493,11 +485,16 @@ button{
 
 .addr-table thead tr th{
   padding-bottom: 0.8rem;
+  color: var(--AzulEscuro);
+}
+
+.addr-table thead tr th:hover {
+  color: var(--Azul);
 }
 
 .addr-table tbody td{
   padding: 1.5rem 0;
-  color: rgba(0, 0, 0, 0.6);
+  color: ba(0, 0, 0, 0.6)rg;
   font-weight: 600;
 }
 
@@ -565,7 +562,7 @@ li {
 footer {
   width: 100%;
   padding: 36px 0 24px;
-  background: var(--cinzaClaro);
+  background: var(--cinza);
   margin-top: 100px;
 }
 

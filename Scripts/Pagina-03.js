@@ -1,44 +1,5 @@
-// search-box open close js code
-let navbar = document.querySelector(".navbar");
-let searchBox = document.querySelector(".search-box .bx-search");
-// let searchBoxCancel = document.querySelector(".search-box .bx-x");
 
-searchBox.addEventListener("click", ()=>{
-  navbar.classList.toggle("showInput");
-  if(navbar.classList.contains("showInput")){
-    searchBox.classList.replace("bx-search" ,"bx-x");
-  }else {
-    searchBox.classList.replace("bx-x" ,"bx-search");
-  }
-});
-
-// sidebar open close js code
-let navLinks = document.querySelector(".nav-links");
-let menuOpenBtn = document.querySelector(".navbar .bx-menu");
-let menuCloseBtn = document.querySelector(".nav-links .bx-x");
-menuOpenBtn.onclick = function() {
-navLinks.style.left = "0";
-}
-menuCloseBtn.onclick = function() {
-navLinks.style.left = "-100%";
-}
-
-
-// sidebar submenu open close js code
-let htmlcssArrow = document.querySelector(".htmlcss-arrow");
-htmlcssArrow.onclick = function() {
- navLinks.classList.toggle("show1");
-}
-let moreArrow = document.querySelector(".more-arrow");
-moreArrow.onclick = function() {
- navLinks.classList.toggle("show2");
-}
-let jsArrow = document.querySelector(".js-arrow");
-jsArrow.onclick = function() {
- navLinks.classList.toggle("show3");
-}
-
-// -------------------------------------------------- //
+// ----------------------- Adicionar Professores --------------------------- //
 
 
 // regular expression for validation
@@ -64,8 +25,8 @@ let professor = cargahoraria = ensino = turmas = Observações = AtivDidaticaPed
 
 // Address class
 class Address{
-    constructor(professor, cargahoraria, ensino, turmas, Observações, AtivDidaticaPedagogica, Orientações, AtivAdministrativas, AtivRepresentações, AtivPesquisaExtensão, Capacitação){
-
+    constructor(id, professor, cargahoraria, ensino, turmas, Observações, AtivDidaticaPedagogica, Orientações, AtivAdministrativas, AtivRepresentações, AtivPesquisaExtensão, Capacitação){
+        this.id = id;
         this.professor = professor;
         this.cargahoraria = cargahoraria;
         this.ensino = ensino;
@@ -96,10 +57,10 @@ class Address{
         localStorage.setItem('addresses', JSON.stringify(addresses));
     }
 
-    static deleteAddress(professor){
+    static deleteAddress(id){
         const addresses = Address.getAddresses();
         addresses.forEach((address, index) => {
-            if(address.professor == professor){
+            if(address.id == id){
                 addresses.splice(index, 1);
             }
         });
@@ -114,7 +75,8 @@ class Address{
     static updateAddress(item){
         const addresses = Address.getAddresses();
         addresses.forEach(address => {
-            if(address.professor == item.professor){
+            if(address.id == item.id){
+                address.professor = item.professor
                 address.cargahoraria = item.cargahoraria;
                 address.ensino = item.ensino;
                 address.turmas = item.turmas;
@@ -144,11 +106,12 @@ class UI{
 
     static addToAddressList(address){
         const tableRow = document.createElement('tr');
-        tableRow.setAttribute('data-professor', address.professor);
+        tableRow.setAttribute('data-id', address.id);
         tableRow.innerHTML = `
+            <td>${address.id}</td>
             <td>${address.professor}</td>
             <td>${address.cargahoraria}</td>   
-            <td>${ address.ensino}</td>
+            <td>${address.ensino}</td>
             <td>${address.turmas}</td>
             <td>${address.Observações}</td>
             <td>${address.AtivDidaticaPedagogica}</td>
@@ -156,6 +119,7 @@ class UI{
             <td>${address.AtivAdministrativas}</td>
             <td>${address.AtivRepresentações}</td>
             <td>${address.AtivPesquisaExtensão}</td>
+            <td>${address.Capacitação}</td>
         `;
         addrBookList.appendChild(tableRow);
 
@@ -164,22 +128,23 @@ class UI{
     static showModalData(id){
         const addresses = Address.getAddresses();
         addresses.forEach(address => {
-            if(address.professor == professor){
+            if(address.id == id){
+                form.professor.value = address.professor;
                 form.carga_horaria.value = address.cargahoraria;
                 form.ensino.value = address.ensino;
                 form.turmas.value = address.turmas;
                 form.Observações.value = address.Observações;
                 form.Ativ_Didatica_Pedagogica.value = address.AtivDidaticaPedagogica;
-                form.labels.Orientações = address.Orientações;
-                form.labels.AtivAdministrativas = address.AtivAdministrativas;
-                form.postal_code.value = address.AtivRepresentações;
-                form.city.value = address.AtivPesquisaExtensão;
-                form.country.value = address.Capacitação;
+                form.Orientações.value = address.Orientações;
+                form.Ativ_Administrativas.value = address.AtivAdministrativas;
+                form.Ativ_Representações.value = address.AtivRepresentações;
+                form.Ativ_Pesquisa_Extensão.value = address.AtivPesquisaExtensão;
+                form.Capacitação.value = address.Capacitação;
                 document.getElementById('modal-title').innerHTML = "Change Address Details";
 
                 document.getElementById('modal-btns').innerHTML = `
-                    <button type = "submit" id = "update-btn" data-id = "${professor}">Update </button>
-                    <button type = "button" id = "delete-btn" data-id = "${professor}">Delete </button>
+                    <button type = "submit" id = "update-btn" data-id = "${id}">Update </button>
+                    <button type = "button" id = "delete-btn" data-id = "${id}">Delete </button>
                 `;
             }
         });
@@ -209,7 +174,7 @@ function eventListeners(){
     // show add item modal
     addBtn.addEventListener('click', () => {
         form.reset();
-        document.getElementById('modal-title').innerHTML = "Adicionar";
+        document.getElementById('modal-title').innerHTML = "Adicionar Professores";
         UI.showModal();
         document.getElementById('modal-btns').innerHTML = `
             <button type = "submit" id = "save-btn"> Salvar </button>
@@ -232,7 +197,7 @@ function eventListeners(){
                 });
             } else {
                 let allItem = Address.getAddresses();
-                let lastItemId = (allItem.length > 0) ? allItem[allItem.length - 1].professor : 0;
+                let lastItemId = (allItem.length > 0) ? allItem[allItem.length - 1].id : 0;
                 lastItemId++;
 
                 const addressItem = new Address(lastItemId, professor, cargahoraria, ensino, turmas, Observações, AtivDidaticaPedagogica, Orientações, AtivRepresentações, AtivPesquisaExtensão, Capacitação);
@@ -270,8 +235,8 @@ function eventListeners(){
     // update an address item
     modalBtns.addEventListener('click', (event) => {
         event.preventDefault();
-        if(event.target.professor == "update-btn"){
-            let professor = event.target.dataset.professor;
+        if(event.target.id == "update-btn"){
+            let id = event.target.dataset.id;
             let isFormValid = getFormData();
             if(!isFormValid){
                 form.querySelectorAll('input').forEach(input => {
@@ -296,9 +261,9 @@ function loadJSON(){
     .then(response => response.json())
     .then(data => {
         let html = "";
-        data.forEach(country => {
+        data.forEach(AtivPesquisaExtensão => {
             html += `
-                <option> ${country.country} </option>
+                <option> ${AtivPesquisaExtensão.AtivPesquisaExtensão} </option>
             `;
         });
         countryList.innerHTML = html;
@@ -331,7 +296,7 @@ function getFormData(){
         addErrMsg(form.ensino);
         inputValidStatus[2] = false;
     } else {
-        ensino = form.last_name.value;
+        ensino = form.ensino.value;
         inputValidStatus[2] = true;
     }
 
@@ -382,4 +347,45 @@ function getFormData(){
 
 function addErrMsg(inputBox){
     inputBox.classList.add('errorMsg');
+}
+
+/*------------------ Barra de Pesquisar ------------------------*/ 
+
+
+let navbar = document.querySelector(".navbar");
+let searchBox = document.querySelector(".search-box .bx-search");
+
+
+searchBox.addEventListener("click", ()=>{
+  navbar.classList.toggle("showInput");
+  if(navbar.classList.contains("showInput")){
+    searchBox.classList.replace("bx-search" ,"bx-x");
+  }else {
+    searchBox.classList.replace("bx-x" ,"bx-search");
+  }
+});
+
+
+let navLinks = document.querySelector(".nav-links");
+let menuOpenBtn = document.querySelector(".navbar .bx-menu");
+let menuCloseBtn = document.querySelector(".nav-links .bx-x");
+menuOpenBtn.onclick = function() {
+navLinks.style.left = "0";
+}
+menuCloseBtn.onclick = function() {
+navLinks.style.left = "-100%";
+}
+
+
+let htmlcssArrow = document.querySelector(".htmlcss-arrow");
+htmlcssArrow.onclick = function() {
+ navLinks.classList.toggle("show1");
+}
+let moreArrow = document.querySelector(".more-arrow");
+moreArrow.onclick = function() {
+ navLinks.classList.toggle("show2");
+}
+let jsArrow = document.querySelector(".js-arrow");
+jsArrow.onclick = function() {
+ navLinks.classList.toggle("show3");
 }
