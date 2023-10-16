@@ -58,6 +58,7 @@ nav .navbar{
 .navbar span {
   color: var(--Azul);
   font-size: 40px;
+  text-shadow: 2px 1px 1px var(--AzulEscuro);
 }
 
 .navbar .logo a{
@@ -65,6 +66,7 @@ nav .navbar{
   color: var(--AzulEscuro);
   text-decoration: none;
   font-weight: 600;
+  text-shadow: 1px 1px 1px var(--AzulEscuro);
 }
 
 nav .navbar .nav-links{
@@ -647,7 +649,7 @@ footer .top .newsletter form button {
   padding: 4px 16px;
   border: none;
   outline: none;
-  color: #fff;
+  color: var(--branco);
   background: var(--AzulEscuro);
   font-weight: 500;
   font-size: 13px;

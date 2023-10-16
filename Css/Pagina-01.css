@@ -46,6 +46,7 @@ header {
 .logo span {
     color: var(--Azul);
     font-size: 40px;
+    text-shadow: 2px 1px 1px var(--AzulEscuro);
 }
 
 .navigation {
@@ -171,7 +172,7 @@ footer .top li {
 }
 
 footer .top a:hover {
-    color: var(--AzulEscuro);
+    color: var(--Azul);
 }
 
 footer .top .brand .logo {
@@ -213,7 +214,7 @@ footer .top .newsletter form .form {
 
 footer .top .newsletter form .form input {
     padding: 4px 10px;
-    background: #fff;
+    background: var(--branco);
     color: var(--dark);
     border: none;
     outline: none;
@@ -224,8 +225,8 @@ footer .top .newsletter form button {
     padding: 4px 16px;
     border: none;
     outline: none;
-    color: #fff;
-    background: var(--Azul);
+    color: var(--branco);
+    background: var(--AzulEscuro);
     font-weight: 500;
     font-size: 13px;
     cursor: pointer;
@@ -233,7 +234,7 @@ footer .top .newsletter form button {
 }
 
 footer .top .newsletter form button:hover {
-    background: var(--AzulEscuro);
+    background: var(--Azul);
 }
 
 footer hr {
