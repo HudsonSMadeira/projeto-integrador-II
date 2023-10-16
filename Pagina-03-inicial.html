@@ -66,11 +66,12 @@
 
     <div class="professor">
         
+       <!-- form modal -->
         <div id = "fullscreen-div"></div>
         <form class = "modal" id = "modal">
             <div class = "modal-content">
                 <div class = "modal-head">
-                    <h3 id = "modal-title">Adicionar</h3>
+                    <h3 id = "modal-title">Adicionar Professores</h3>
                     <button type="button" id = "close-btn">
                         <i class = "fas fa-times"></i>
                     </button>
@@ -79,65 +80,65 @@
                     <div class = "modal-row">
                         <div class = "modal-col">
                             <label for="">Professor</label>
-                            <input type = "text" placeholder="Nome do Professor" class = "form-control" name = "professor">
+                            <input type = "text"  class = "form-control" name = "addr_ing_name">
                         </div>
                     </div>
-    
+
                     <div class = "modal-row grid-row">
                         <div class = "modal-col">
                             <label for="">Carga Horária</label>
-                            <input type = "text" placeholder="Caraga Horária" class = "form-control" name = "carga_horaria">
+                            <input type = "number"  class = "form-control" name = "carga_horaria">
                         </div>
                         <div class = "modal-col">
                             <label for="">Ensino</label>
-                            <input type = "text" placeholder="Ensino" class = "form-control" name = "ensino">
+                            <input type = "number"  class = "form-control" name = "ensino_e">
                         </div>
                     </div>
-    
+
                     <div class = "modal-row grid-row">
                         <div class = "modal-col">
                             <label for="">Turmas</label>
-                            <input type = "text" placeholder="Turmas" class = "form-control" name = "turmas">
+                            <input type = "number"  class = "form-control" name = "turmas_t">
                         </div>
                         <div class = "modal-col">
                             <label for="">Observações</label>
-                            <input type = "text" placeholder="Observações" class = "form-control" name = "Observações">
+                            <input type = "text"  class = "form-control" name = "observacoes_o">
                         </div>
                     </div>
-    
+
                     <div class = "modal-row grid-row">
                         <div class = "modal-col">
-                            <label for="">Ativ.Didatica/Pedagogica</label>
-                            <input type = "text" placeholder="Ativ.Didatica/Pedagogica" class = "form-control" name = "Ativ_Didatica_Pedagogica">
+                            <label for="">Ativ.Didatica/Pedagógica</label>
+                            <input type = "number"  class = "form-control" name = "Ativ_Didat_Pedag">
                         </div>
                         <div class = "modal-col">
                             <label for="">Orientações</label>
-                            <input type = "text" placeholder="Orientações" class = "form-control" name = "Orientações">
+                            <input type = "number"  class = "form-control" name = "orienracoes_o">
                         </div>
                     </div>
-    
+
                     <div class = "modal-row grid-row">
                         <div class = "modal-col">
                             <label for="">Ativ.Administrativas</label>
-                            <input type = "text" placeholder="Ativ.Administrativas" class = "form-control" name = "Ativ_Administrativas">
+                            <input type = "number"  class = "form-control" name = "ativ_administrativas">
                         </div>
                         <div class = "modal-col">
                             <label for="">Ativ.Representações</label>
-                            <input type = "text" placeholder="Ativ.Representações" class = "form-control" name = "Ativ_Representações">
+                            <input type = "number"  class = "form-control" name = "ativ_representacoes">
                         </div>
                     </div>
-    
+
                     <div class = "modal-row grid-row">
                         <div class = "modal-col">
                             <label for="">Ativ.Pesquisa/Extensão</label>
-                            <input type = "text" placeholder="Ativ.Pesquisa/Extensão" class = "form-control" name = "Ativ_Pesquisa_Extensão"> 
+                            <input type = "number"  class = "form-control" name = "ativ_pesquisa_extencao">
                         </div>
                         <div class = "modal-col">
                             <label for="">Capacitação</label>
-                            <input type = "text" placeholder="Capacitação" class = "form-control" name = "Capacitação"> 
+                            <input type = "number"  class = "form-control" name = "capacitação_c">
                         </div>
                     </div>
-    
+
                     <div class = "modal-row" id = "modal-btns">
                         <button type = "submit" id = "save-btn">Salvar</button>
                     </div>
@@ -145,61 +146,54 @@
             </div>
         </form>
         <!-- end of form modal -->
-    
+
         <!-- address book home -->
-
         <div class = "addr-book" id = "addr-book">
-
             <div class = "addr-book-content">
                 <div class = "addr-book-head">
                     <i class = "fa-solid fa-address-book fa-2x"></i>
-                    <h2>Carga<span> Horária</span></h2>
+                    <h2>Carga<span> Horária dos Professores</span></h2>
                 </div>
-    
+
                 <div class = "addr-book-top">
                     <button type = "button" class = "btn" id = "add-btn">
-                        <span><i class = "fas fa-plus"></i> Adicionar</span>
+                        <span><i class = "fas fa-plus"></i> Adicionar </span>
                     </button>
                 </div>
-    
+
                 <div class = "addr-book-list" id = "addr-book-list">
-
                     <table class = "addr-table">
-
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Professor</th>
+                                <th></th>
                                 <th>Carga Horária</th>
-                                <th>Ensino H/A</th>
+                                <th>Ensino</th>
                                 <th>Turmas</th>
                                 <th>Observações</th>
-                                <th>Ativ.Didat.Pedag.</th>
+                                <th>Ativ.Didático/Pedagógica.</th>
                                 <th>Orientações</th>
                                 <th>Ativ.Administrativas</th>
                                 <th>Ativ.Representações</th>
-                                <th>Ativ.Pesquisa/Extensão</th>
-                                <th>Capacitação</th>  
+                                <!--<th>Ativ.Pesquisa/Extensão</th>
+                                <th>Capacitação</th>-->
                             </tr>
                         </thead>
-
                         <tbody>
-                            <!-- <tr>
-                                <td>1</td>
-                                <td>André Francisco Coelho Castro</td>
-                                <td>40</td>
-                                <td>5</td>
-                                <td>3</td>
-                                <td>Diren</td>
-                                <td>5</td>
-                                <td>0</td>
-                                <td>20</td>
-                                <td>0</td>
-                                <th>0</th>
-                                <th>0</th>
+                            <!-- <tr> 
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
                             </tr> -->
-                        </tbody>    
-                        
+                        </tbody>
                     </table>
                 </div>
             </div>

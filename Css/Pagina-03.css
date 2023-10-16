@@ -287,6 +287,7 @@ button{
   -webkit-box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 5;
+  align-items: center;
 }
 
 .modal-head{
@@ -331,26 +332,28 @@ button{
 }
 
 .modal-main{
-  padding: 1.2rem 2.4rem 1rem 2.4rem;
-  max-width: 580px;
-  min-width: 500px;
+  padding: 1rem 2.4rem 1rem 2.4rem;
+  max-width: 480px;
+  min-width: 400px;
 }
 
 .modal-row{
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .grid-row{
+  align-items: center;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  -webkit-column-gap: 1.3rem;
-     -moz-column-gap: 1.3rem;
-          column-gap: 1.3rem;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
 }
 
 .modal-col label{
   display: block;
-  font-weight: 700;
+  align-items: center;
+  font-weight: 400;
   color: var(--AzulEscuro);
   margin-bottom: 0.6rem;
 }
@@ -360,7 +363,6 @@ button{
   border-radius: 3px;
   padding: 0.5rem 0.8rem;
   font-size: 1rem;
-  font-family: inherit;
   outline: 0;
   width: 100%;
 }
@@ -389,8 +391,8 @@ button{
 }
 
 #save-btn:hover, #update-btn:hover{
-  -webkit-box-shadow: 0 1px 0 0 #0CB0FF;
-          box-shadow: 0 1px 0 0 #0CB0FF;
+  -webkit-box-shadow: 0 1px 0 0 #00476A;
+          box-shadow: 0 1px 0 0 #00476A;
 }
 
 #delete-btn{
@@ -409,7 +411,7 @@ button{
 .addr-book{
   padding: 1.4rem;
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: 1700px;
   min-width: 700px!important;
 }
 
@@ -473,18 +475,20 @@ button{
 }
 
 .addr-table{
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 100%;
-  text-align: left;
+  text-align: center;
   border-collapse: collapse;
+  padding: 10px;
 }
 
 .addr-table thead{
-  border-bottom: 1px solid #e3e4f1;
+  border-bottom: 1px solid var(--AzulEscuro);
 }
 
 .addr-table thead tr th{
   padding-bottom: 0.8rem;
+  text-align: center;
   color: var(--AzulEscuro);
 }
 
@@ -519,6 +523,7 @@ button{
   border-radius: 8px;
 }
 .addr-table tbody tr{
+  text-align: center;
   cursor: pointer;
 }
 .addr-table tbody tr:hover{
@@ -725,104 +730,104 @@ footer .bottom a:hover {
   }
 }
 @media (max-width:800px){
-  /*nav{
-     position: relative; 
-  }*/
-  .navbar .bx-menu{
-    display: block;
-  }
-  nav .navbar .nav-links{
-    position: fixed;
-    top: 0;
-    left: -100%;
-    display: block;
-    max-width: 270px;
-    width: 100%;
-    background:  var(--azulClaro);
-    line-height: 40px;
-    padding: 20px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.5s ease;
-    z-index: 1000;
-  }
-  .navbar .nav-links .sidebar-logo{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .sidebar-logo .logo-name{
-    font-size: 25px;
-    color: #fff;
-  }
+    /*nav{
+        position: relative; 
+    }*/
+    .navbar .bx-menu{
+        display: block;
+    }
+    nav .navbar .nav-links{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        display: block;
+        max-width: 270px;
+        width: 100%;
+        background:  var(--azulClaro);
+        line-height: 40px;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.5s ease;
+        z-index: 1000;
+    }
+    .navbar .nav-links .sidebar-logo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .sidebar-logo .logo-name{
+        font-size: 25px;
+        color: #fff;
+    }
     .sidebar-logo  i,
     .navbar .bx-menu{
       font-size: 25px;
       color: #fff;
     }
-  nav .navbar .links{
-    display: block;
-    margin-top: 20px;
-  }
-  nav .navbar .links li .arrow{
-    line-height: 40px;
-  }
-nav .navbar .links li{
-    display: block;
-  }
-nav .navbar .links li .sub-menu{
-  position: relative;
-  top: 0;
-  box-shadow: none;
-  display: none;
-}
-nav .navbar .links li .sub-menu li{
-  border-bottom: none;
-
-}
-.navbar .links li .sub-menu .more-sub-menu{
-  display: none;
-  position: relative;
-  left: 0;
-}
-.navbar .links li .sub-menu .more-sub-menu li{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.links li:hover .htmlcss-arrow,
-.links li:hover .js-arrow{
-  transform: rotate(0deg);
-  }
-  .navbar .links li .sub-menu .more-sub-menu{
+    nav .navbar .links{
+        display: block;
+        margin-top: 20px;
+    }
+    nav .navbar .links li .arrow{
+        line-height: 40px;
+    }
+    nav .navbar .links li{
+        display: block;
+    }
+    nav .navbar .links li .sub-menu{
+    position: relative;
+    top: 0;
+    box-shadow: none;
     display: none;
-  }
-  .navbar .links li .sub-menu .more span{
+    }
+    nav .navbar .links li .sub-menu li{
+    border-bottom: none;
+
+    }
+    .navbar .links li .sub-menu .more-sub-menu{
+    display: none;
+    position: relative;
+    left: 0;
+    }
+    .navbar .links li .sub-menu .more-sub-menu li{
     display: flex;
     align-items: center;
-  }
+    justify-content: space-between;
+    }
+    .links li:hover .htmlcss-arrow,
+    .links li:hover .js-arrow{
+    transform: rotate(0deg);
+    }
+    .navbar .links li .sub-menu .more-sub-menu{
+        display: none;
+    }
+    .navbar .links li .sub-menu .more span{
+        display: flex;
+        align-items: center;
+    }
 
-  .links li .sub-menu .more:hover .more-sub-menu{
-    display: none;
-  }
-  nav .navbar .links li:hover .htmlCss-sub-menu,
-  nav .navbar .links li:hover .js-sub-menu{
-    display: none;
-  }
-.navbar .nav-links.show1 .links .htmlCss-sub-menu,
-  .navbar .nav-links.show3 .links .js-sub-menu,
-  .navbar .nav-links.show2 .links .more .more-sub-menu{
-      display: block;
+    .links li .sub-menu .more:hover .more-sub-menu{
+        display: none;
     }
-    .navbar .nav-links.show1 .links .htmlcss-arrow,
-    .navbar .nav-links.show3 .links .js-arrow{
-        transform: rotate(180deg);
-}
-    .navbar .nav-links.show2 .links .more-arrow{
-      transform: rotate(90deg);
+    nav .navbar .links li:hover .htmlCss-sub-menu,
+    nav .navbar .links li:hover .js-sub-menu{
+        display: none;
     }
-}
-@media (max-width:370px){
-  nav .navbar .nav-links{
-  max-width: 100%;
-} 
+    .navbar .nav-links.show1 .links .htmlCss-sub-menu,
+    .navbar .nav-links.show3 .links .js-sub-menu,
+    .navbar .nav-links.show2 .links .more .more-sub-menu{
+        display: block;
+        }
+        .navbar .nav-links.show1 .links .htmlcss-arrow,
+        .navbar .nav-links.show3 .links .js-arrow{
+            transform: rotate(180deg);
+    }
+        .navbar .nav-links.show2 .links .more-arrow{
+        transform: rotate(90deg);
+        }
+    }
+    @media (max-width:370px){
+    nav .navbar .nav-links{
+    max-width: 100%;
+    } 
 }

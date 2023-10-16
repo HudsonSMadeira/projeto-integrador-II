@@ -1,6 +1,4 @@
-
-// ----------------------- Adicionar Professores --------------------------- //
-
+// -------------------------------------------------- //
 
 // regular expression for validation
 const strRegex =  /^[a-zA-Z\s]*$/; // containing only letters
@@ -21,23 +19,23 @@ const form = document.getElementById('modal');
 const addrBookList = document.querySelector('#addr-book-list tbody');
 
 // -------------------------------------------------- //
-let professor = cargahoraria = ensino = turmas = Observações = AtivDidaticaPedagogica = Orientações = AtivAdministrativas = AtivRepresentações = AtivPesquisaExtensão = Capacitação = "";
+let addrName = cargaHoraria = ensino = turmas = observacoes = ativDidapedag = orienracoes = ativAdministrativas = ativRepresentacoes = ativPesquisaExtencao = capacitação = "";
 
 // Address class
 class Address{
-    constructor(id, professor, cargahoraria, ensino, turmas, Observações, AtivDidaticaPedagogica, Orientações, AtivAdministrativas, AtivRepresentações, AtivPesquisaExtensão, Capacitação){
+    constructor(id, addrName, cargaHoraria, turmas, observacoes, ativDidapedag, orienracoes, ativAdministrativas, ativRepresentacoes, ativPesquisaExtencao, capacitação){
         this.id = id;
-        this.professor = professor;
-        this.cargahoraria = cargahoraria;
+        this.addrName = addrName;
+        this.cargaHoraria = cargaHoraria;
         this.ensino = ensino;
         this.turmas = turmas;
-        this.Observações = Observações;
-        this.AtivDidaticaPedagogica = AtivDidaticaPedagogica;
-        this.Orientações = Orientações;
-        this.AtivAdministrativas = AtivAdministrativas;
-        this.AtivRepresentações = AtivRepresentações;
-        this.AtivPesquisaExtensão = AtivPesquisaExtensão;
-        this.Capacitação = Capacitação;
+        this.observacoes = observacoes;
+        this.ativDidapedag = ativDidapedag;
+        this.orienracoes = orienracoes;
+        this.ativAdministrativas = ativAdministrativas;
+        this.ativRepresentacoes = ativRepresentacoes;
+        this.ativPesquisaExtencao = ativPesquisaExtencao;
+        this.capacitação = capacitação;
     }
 
     static getAddresses(){
@@ -64,7 +62,6 @@ class Address{
                 addresses.splice(index, 1);
             }
         });
-
         localStorage.setItem('addresses', JSON.stringify(addresses));
         form.reset();
         UI.closeModal();
@@ -76,21 +73,19 @@ class Address{
         const addresses = Address.getAddresses();
         addresses.forEach(address => {
             if(address.id == item.id){
-                address.professor = item.professor
-                address.cargahoraria = item.cargahoraria;
+                address.addrName = item.addrName;
+                address.cargaHoraria = item.cargaHoraria;
                 address.ensino = item.ensino;
                 address.turmas = item.turmas;
-                address.Observações = item.Observações;
-                address.AtivDidaticaPedagogica = item.AtivDidaticaPedagogica;
-                address.Orientações = item.Orientações;
-                address.AtivAdministrativas = item.AtivAdministrativas;
-                address.AtivRepresentações = item.AtivRepresentações;
-                address.AtivPesquisaExtensão = item.AtivPesquisaExtensão;
-                address.Capacitação = item.Capacitação;
-                
+                address.observacoes = item.observacoes;
+                address.ativDidapedag = item.ativDidapedag;
+                address.orienracoes = item.orienracoes;
+                address.ativAdministrativas = item.ativAdministrativas;
+                address.ativRepresentacoes = item.ativRepresentacoes;
+                address.ativPesquisaExtencao = item.ativPesquisaExtencao;
+                address.capacitação = item.capacitação;
             }
         });
-
         localStorage.setItem('addresses', JSON.stringify(addresses));
         addrBookList.innerHTML = "";
         UI.showAddressList();
@@ -108,43 +103,43 @@ class UI{
         const tableRow = document.createElement('tr');
         tableRow.setAttribute('data-id', address.id);
         tableRow.innerHTML = `
-            <td>${address.id}</td>
-            <td>${address.professor}</td>
-            <td>${address.cargahoraria}</td>   
+            <td>${address.addrName}</td>
+            <td>${address.cargaHoraria}</td>
             <td>${address.ensino}</td>
             <td>${address.turmas}</td>
-            <td>${address.Observações}</td>
-            <td>${address.AtivDidaticaPedagogica}</td>
-            <td>${address.Orientações}</td>
-            <td>${address.AtivAdministrativas}</td>
-            <td>${address.AtivRepresentações}</td>
-            <td>${address.AtivPesquisaExtensão}</td>
-            <td>${address.Capacitação}</td>
+            <td>${address.observacoes}</td>
+            <td>${address.ativDidapedag}</td>
+            <td>${address.orienracoes}</td>
+            <td>${address.ativAdministrativas}</td>
+            <td>${address.ativRepresentacoes}</td>
+            
         `;
         addrBookList.appendChild(tableRow);
 
+        /* <td>${address.ativPesquisaExtencao}</td>
+            <td>${address.capacitação}</td> */
     }
 
     static showModalData(id){
         const addresses = Address.getAddresses();
         addresses.forEach(address => {
             if(address.id == id){
-                form.professor.value = address.professor;
-                form.carga_horaria.value = address.cargahoraria;
-                form.ensino.value = address.ensino;
-                form.turmas.value = address.turmas;
-                form.Observações.value = address.Observações;
-                form.Ativ_Didatica_Pedagogica.value = address.AtivDidaticaPedagogica;
-                form.Orientações.value = address.Orientações;
-                form.Ativ_Administrativas.value = address.AtivAdministrativas;
-                form.Ativ_Representações.value = address.AtivRepresentações;
-                form.Ativ_Pesquisa_Extensão.value = address.AtivPesquisaExtensão;
-                form.Capacitação.value = address.Capacitação;
-                document.getElementById('modal-title').innerHTML = "Change Address Details";
+                form.addr_ing_name.value = address.addrName;
+                form.carga_horaria.value = address.cargaHoraria;
+                form.ensino_e.value = address.ensino;
+                form.turmas_t.value = address.turmas;
+                form.observacoes_o.value = address.observacoes;
+                form.Ativ_Didat_Pedag.value = address.ativDidapedag;
+                form.orienracoes_o.value = address.orienracoes;
+                form.ativ_administrativas.value = address.ativAdministrativas;
+                form.ativ_representacoes.value = address.ativRepresentacoes;
+                form.ativ_pesquisa_extencao.value = address.ativPesquisaExtencao;
+                form.capacitação_c.value = address.capacitação;
+                document.getElementById('modal-title').innerHTML = "Adicionar Professores";
 
                 document.getElementById('modal-btns').innerHTML = `
-                    <button type = "submit" id = "update-btn" data-id = "${id}">Update </button>
-                    <button type = "button" id = "delete-btn" data-id = "${id}">Delete </button>
+                    <button type = "submit" id = "update-btn" data-id = "${id}">Editar </button>
+                    <button type = "button" id = "delete-btn" data-id = "${id}">Excluir </button>
                 `;
             }
         });
@@ -200,7 +195,7 @@ function eventListeners(){
                 let lastItemId = (allItem.length > 0) ? allItem[allItem.length - 1].id : 0;
                 lastItemId++;
 
-                const addressItem = new Address(lastItemId, professor, cargahoraria, ensino, turmas, Observações, AtivDidaticaPedagogica, Orientações, AtivRepresentações, AtivPesquisaExtensão, Capacitação);
+                const addressItem = new Address(lastItemId, addrName, cargaHoraria, ensino, turmas, observacoes, ativDidapedag, orienracoes, ativAdministrativas, ativRepresentacoes, ativPesquisaExtencao, capacitação);
                 Address.addAddress(addressItem);
                 UI.closeModal();
                 UI.addToAddressList(addressItem);
@@ -245,7 +240,7 @@ function eventListeners(){
                     }, 1500);
                 });
             } else {
-                const addressItem = new Address(id, professor, cargahoraria, ensino, turmas, Observações, AtivDidaticaPedagogica, Orientações, AtivRepresentações, AtivPesquisaExtensão, Capacitação);
+                const addressItem = new Address(id, addrName, cargaHoraria, ensino, turmas, observacoes, ativDidapedag, orienracoes, ativAdministrativas, ativRepresentacoes, ativPesquisaExtencao, capacitação);
                 Address.updateAddress(addressItem);
                 UI.closeModal();
                 form.reset();
@@ -261,9 +256,9 @@ function loadJSON(){
     .then(response => response.json())
     .then(data => {
         let html = "";
-        data.forEach(AtivPesquisaExtensão => {
+        data.forEach(country => {
             html += `
-                <option> ${AtivPesquisaExtensão.AtivPesquisaExtensão} </option>
+                <option> ${country.country} </option>
             `;
         });
         countryList.innerHTML = html;
@@ -271,76 +266,34 @@ function loadJSON(){
 }
 
 
-// get form data
+// get form data ---------------- Verificar se os campos estão preenchidos --------------------------
+
 function getFormData(){
     let inputValidStatus = [];
-    // console.log(professor.value, form.professor.value, form.carga_horaria.value, form.ensino.value, form.turmas.value, form.Observações.value, form.Ativ_Didatica_Pedagogica.value, form.Orientações.value, form.Ativ_Administrativas.value, form.labels.value);
+    // console.log(form.addr_ing_name.value, form.first_name.value, form.last_name.value, form.email.value, form.phone.value, form.street_addr.value, form.postal_code.value, form.city.value, form.country.value, form.labels.value);
+    
+    addrName = form.addr_ing_name.value;
+    
+    cargaHoraria = form.carga_horaria.value;
+    
+    ensino = form.ensino_e.value;
+   
+    turmas = form.turmas_t.value;
+    
+    observacoes = form.observacoes_o.value;
+   
+    ativDidapedag = form.Ativ_Didat_Pedag.value;
+    
+    orienracoes = form.orienracoes_o.value;
+    
+    ativAdministrativas = form.ativ_administrativas.value;
+    
+    ativRepresentacoes = form.ativ_representacoes.value;
 
-    if(!strRegex.test(form.professor.value) || form.professor.value.trim().length == 0){
-        addErrMsg(form.professor);
-        inputValidStatus[0] = false;
-    } else {
-        professor = form.professor.value;
-        inputValidStatus[0] = true;
-    }
+    ativPesquisaExtencao = form.ativ_pesquisa_extencao.value;
 
-    if(!strRegex.test(form.cargahoraria.value) || form.cargahoraria.value.trim().length == 0){
-        addErrMsg(form.cargahoraria);
-        inputValidStatus[1] = false;
-    } else {
-        cargahoraria = form.cargahoraria.value;
-        inputValidStatus[1] = true;
-    }
+    capacitação = form.capacitação_c.value;
 
-    if(!strRegex.test(form.ensino.value) || form.ensino.value.trim().length == 0){
-        addErrMsg(form.ensino);
-        inputValidStatus[2] = false;
-    } else {
-        ensino = form.ensino.value;
-        inputValidStatus[2] = true;
-    }
-
-    if(!emailRegex.test(form.turmas.value)){
-        addErrMsg(form.turmas);
-        inputValidStatus[3] = false;
-    } else {
-        turmas = form.turmas.value;
-        inputValidStatus[3] = true;
-    }
-
-    if(!phoneRegex.test(form.Observações.value)){
-        addErrMsg(form.Observações);
-        inputValidStatus[4] = false;
-    } else {
-        Observações = form.Observações.value;
-        inputValidStatus[4] = true;
-    }
-
-    if(!(form.AtivDidaticaPedagogica.value.trim().length > 0)){
-        addErrMsg(form.AtivDidaticaPedagogica);
-        inputValidStatus[5] = false;
-    } else {
-        AtivDidaticaPedagogica = form.AtivDidaticaPedagogica.value;
-        inputValidStatus[5] = true;
-    }
-
-    if(!digitRegex.test(form.Orientações.value)){
-        addErrMsg(form.Orientações);
-        inputValidStatus[6] = false;
-    } else {
-        Orientações = form.Orientações.value;
-        inputValidStatus[6] = true;
-    }
-
-    if(!strRegex.test(form.AtivRepresentações.value) || form.AtivRepresentações.value.trim().length == 0){
-        addErrMsg(form.city);
-        inputValidStatus[7] = false;
-    } else {
-        AtivRepresentações = form.AtivRepresentações.value;
-        inputValidStatus[7] = true;
-    }
-    AtivPesquisaExtensão = form.AtivPesquisaExtensão.value;
-    AtivPesquisaExtensão = form.AtivPesquisaExtensão.value;
     return inputValidStatus.includes(false) ? false : true;
 }
 
@@ -349,12 +302,12 @@ function addErrMsg(inputBox){
     inputBox.classList.add('errorMsg');
 }
 
-/*------------------ Barra de Pesquisar ------------------------*/ 
+/* ---------------------------------------------------------- */
 
-
+// search-box open close js code
 let navbar = document.querySelector(".navbar");
 let searchBox = document.querySelector(".search-box .bx-search");
-
+// let searchBoxCancel = document.querySelector(".search-box .bx-x");
 
 searchBox.addEventListener("click", ()=>{
   navbar.classList.toggle("showInput");
@@ -365,7 +318,7 @@ searchBox.addEventListener("click", ()=>{
   }
 });
 
-
+// sidebar open close js code
 let navLinks = document.querySelector(".nav-links");
 let menuOpenBtn = document.querySelector(".navbar .bx-menu");
 let menuCloseBtn = document.querySelector(".nav-links .bx-x");
@@ -377,6 +330,7 @@ navLinks.style.left = "-100%";
 }
 
 
+// sidebar submenu open close js code
 let htmlcssArrow = document.querySelector(".htmlcss-arrow");
 htmlcssArrow.onclick = function() {
  navLinks.classList.toggle("show1");
