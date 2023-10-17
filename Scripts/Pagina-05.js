@@ -1,4 +1,3 @@
-// -------------------------------------------------- //
 
 // regular expression for validation
 const strRegex =  /^[a-zA-Z\s]*$/; // containing only letters
@@ -19,23 +18,19 @@ const form = document.getElementById('modal');
 const addrBookList = document.querySelector('#addr-book-list tbody');
 
 // -------------------------------------------------- //
-let addrName = cargaHoraria = ensino = turmas = observacoes = ativDidapedag = orienracoes = ativAdministrativas = ativRepresentacoes = ativPesquisaExtencao = capacitação = "";
+let addrName = diciplinas = laboratorios = cargaHoraria = ass = descricao = "";
 
 // Address class
 class Address{
-    constructor(id, addrName, cargaHoraria, turmas, observacoes, ativDidapedag, orienracoes, ativAdministrativas, ativRepresentacoes, ativPesquisaExtencao, capacitação){
+    constructor(id, addrName, diciplinas, laboratorios, cargaHoraria, ass,  descricao){
         this.id = id;
         this.addrName = addrName;
+        this.diciplinas = diciplinas;
+        this.laboratorios = laboratorios;
         this.cargaHoraria = cargaHoraria;
-        this.ensino = ensino;
-        this.turmas = turmas;
-        this.observacoes = observacoes;
-        this.ativDidapedag = ativDidapedag;
-        this.orienracoes = orienracoes;
-        this.ativAdministrativas = ativAdministrativas;
-        this.ativRepresentacoes = ativRepresentacoes;
-        this.ativPesquisaExtencao = ativPesquisaExtencao;
-        this.capacitação = capacitação;
+        this.ass = ass;
+        this.descricao = descricao;
+    
     }
 
     static getAddresses(){
@@ -74,16 +69,12 @@ class Address{
         addresses.forEach(address => {
             if(address.id == item.id){
                 address.addrName = item.addrName;
+                address.diciplinas = item.diciplinas;
+                address.laboratorios = item.laboratorios;
                 address.cargaHoraria = item.cargaHoraria;
-                address.ensino = item.ensino;
-                address.turmas = item.turmas;
-                address.observacoes = item.observacoes;
-                address.ativDidapedag = item.ativDidapedag;
-                address.orienracoes = item.orienracoes;
-                address.ativAdministrativas = item.ativAdministrativas;
-                address.ativRepresentacoes = item.ativRepresentacoes;
-                address.ativPesquisaExtencao = item.ativPesquisaExtencao;
-                address.capacitação = item.capacitação;
+                address.ass = item.ass;
+                address.descricao = item.descricao;
+                
             }
         });
         localStorage.setItem('addresses', JSON.stringify(addresses));
@@ -104,14 +95,12 @@ class UI{
         tableRow.setAttribute('data-id', address.id);
         tableRow.innerHTML = `
             <td>${address.addrName}</td>
+            <td>${address.diciplinas}</td>
+            <td>${address.laboratorios}</td>
             <td>${address.cargaHoraria}</td>
-            <td>${address.ensino}</td>
-            <td>${address.turmas}</td>
-            <td>${address.observacoes}</td>
-            <td>${address.ativDidapedag}</td>
-            <td>${address.orienracoes}</td>
-            <td>${address.ativAdministrativas}</td>
-            <td>${address.ativRepresentacoes}</td>
+            <td>${address.ass}</td>
+            <td>${address.descricao}</td>
+            
             
         `;
         addrBookList.appendChild(tableRow);
@@ -125,16 +114,12 @@ class UI{
         addresses.forEach(address => {
             if(address.id == id){
                 form.addr_ing_name.value = address.addrName;
+                form.diciplinas_d.value = address.diciplinas;
+                form.laboratorios_l.value = address.laboratorios;
                 form.carga_horaria.value = address.cargaHoraria;
-                form.ensino_e.value = address.ensino;
-                form.turmas_t.value = address.turmas;
-                form.observacoes_o.value = address.observacoes;
-                form.Ativ_Didat_Pedag.value = address.ativDidapedag;
-                form.orienracoes_o.value = address.orienracoes;
-                form.ativ_administrativas.value = address.ativAdministrativas;
-                form.ativ_representacoes.value = address.ativRepresentacoes;
-                form.ativ_pesquisa_extencao.value = address.ativPesquisaExtencao;
-                form.capacitação_c.value = address.capacitação;
+                form.ass_a.value = address.ass;
+                form.descicao_d.value = address.descricao;
+                
                 document.getElementById('modal-title').innerHTML = "Adicionar Professores";
 
                 document.getElementById('modal-btns').innerHTML = `
@@ -195,7 +180,7 @@ function eventListeners(){
                 let lastItemId = (allItem.length > 0) ? allItem[allItem.length - 1].id : 0;
                 lastItemId++;
 
-                const addressItem = new Address(lastItemId, addrName, cargaHoraria, ensino, turmas, observacoes, ativDidapedag, orienracoes, ativAdministrativas, ativRepresentacoes, ativPesquisaExtencao, capacitação);
+                const addressItem = new Address(lastItemId, addrName, diciplinas, laboratorios, cargaHoraria, ass, descricao);
                 Address.addAddress(addressItem);
                 UI.closeModal();
                 UI.addToAddressList(addressItem);
@@ -240,7 +225,7 @@ function eventListeners(){
                     }, 1500);
                 });
             } else {
-                const addressItem = new Address(id, addrName, cargaHoraria, ensino, turmas, observacoes, ativDidapedag, orienracoes, ativAdministrativas, ativRepresentacoes, ativPesquisaExtencao, capacitação);
+                const addressItem = new Address(id, addrName, diciplinas, laboratorios, cargaHoraria, ass, descricao);
                 Address.updateAddress(addressItem);
                 UI.closeModal();
                 form.reset();
@@ -274,57 +259,22 @@ function getFormData(){
     
     addrName = form.addr_ing_name.value;
     
+    diciplinas = form.diciplinas_d.value;
+    
+    laboratorios = form.laboratorios_l.value;
+   
     cargaHoraria = form.carga_horaria.value;
     
-    ensino = form.ensino_e.value;
+    ass_a = form.ass.value;
    
-    turmas = form.turmas_t.value;
-    
-    observacoes = form.observacoes_o.value;
-   
-    ativDidapedag = form.Ativ_Didat_Pedag.value;
-    
-    orienracoes = form.orienracoes_o.value;
-    
-    ativAdministrativas = form.ativ_administrativas.value;
-    
-    ativRepresentacoes = form.ativ_representacoes.value;
-
-    ativPesquisaExtencao = form.ativ_pesquisa_extencao.value;
-
-    capacitação = form.capacitação_c.value;
+    descricao = form.descicao_d.value;
 
     return inputValidStatus.includes(false) ? false : true;
 }
 
-
 function addErrMsg(inputBox){
     inputBox.classList.add('errorMsg');
 }
-
-// ------- Selecionar Ano --------------
-
-const selectBtn = document.querySelector(".select-btn-chek"),
-      items = document.querySelectorAll(".item-chek");
-
-selectBtn.addEventListener("click", () => {
-    selectBtn.classList.toggle("open");
-});
-
-items.forEach(item => {
-    item.addEventListener("click", () => {
-        item.classList.toggle("checked");
-
-        let checked = document.querySelectorAll(".checked"),
-            btnText = document.querySelector(".btn-text");
-
-            if(checked && checked.length > 0){
-                btnText.innerText = `${checked.length} 2023`;
-            }else{
-                btnText.innerText = "Ano - Semestre";
-            }
-    });
-})
 
 /* ---------------------------------------------------------- */
 
