@@ -43,7 +43,7 @@
                                 <i class='bx bxs-chevron-right arrow more-arrow'></i>
                             </span>
                             <ul class="more-sub-menu sub-menu">
-                                <li><a href="#">TADS</a></li>
+                                <li><a href="Pagina-06-TADS.html">TADS</a></li>
                                 <li><a href="#">Matemática</a></li>
                                 <li><a href="#">Biologia</a></li>
                             </ul>
@@ -83,60 +83,31 @@
                             <label for="">Professor</label>
                             <input type = "text"  class = "form-control" name = "addr_ing_name">
                         </div>
+                        <div class = "modal-col">
+                            <label for="">Diciplinas</label>
+                            <input type = "text"  class = "form-control" name = "diciplinas_D">
+                        </div>
                     </div>
 
                     <div class = "modal-row grid-row">
                         <div class = "modal-col">
                             <label for="">Laboratórios</label>
-                            <input type = "number"  class = "form-control" name = "carga_horaria">
+                            <input type = "text"  class = "form-control" name = "laboratoarios_L">
                         </div>
                         <div class = "modal-col">
                             <label for="">Carga Horária</label>
-                            <input type = "number"  class = "form-control" name = "ensino_e">
+                            <input type = "number"  class = "form-control" name = "carga_horaria">
                         </div>
                     </div>
 
-                    <div class = "modal-row grid-row">
+                    <div class = "modal-row">
                         <div class = "modal-col">
                             <label for="">AS</label>
-                            <input type = "number"  class = "form-control" name = "turmas_t">
+                            <input type = "number"  class = "form-control" name = "a_s">
                         </div>
                         <div class = "modal-col">
                             <label for="">Descrição</label>
-                            <input type = "text"  class = "form-control" name = "observacoes_o">
-                        </div>
-                    </div>
-
-                    <div class = "modal-row grid-row">
-                        <div class = "modal-col">
-                            <label for=""></label>
-                            <input type = "number"  class = "form-control" name = "Ativ_Didat_Pedag">
-                        </div>
-                        <div class = "modal-col">
-                            <label for=""></label>
-                            <input type = "number"  class = "form-control" name = "orienracoes_o">
-                        </div>
-                    </div>
-
-                    <div class = "modal-row grid-row">
-                        <div class = "modal-col">
-                            <label for=""></label>
-                            <input type = "number"  class = "form-control" name = "ativ_administrativas">
-                        </div>
-                        <div class = "modal-col">
-                            <label for=""></label>
-                            <input type = "number"  class = "form-control" name = "ativ_representacoes">
-                        </div>
-                    </div>
-
-                    <div class = "modal-row grid-row">
-                        <div class = "modal-col">
-                            <label for=""></label>
-                            <input type = "number"  class = "form-control" name = "ativ_pesquisa_extencao">
-                        </div>
-                        <div class = "modal-col">
-                            <label for=""></label>
-                            <input type = "number"  class = "form-control" name = "capacitação_c">
+                            <input type = "text"  class = "form-control" name = "descricao_D">
                         </div>
                     </div>
 
@@ -153,7 +124,8 @@
             <div class = "addr-book-content">
                 <div class = "addr-book-head">
                     <i class = "fa-solid fa-address-book fa-2x"></i>
-                    <h2>Carga<span> Horária dos Professores</span></h2>
+                    <h2>Demandas<span>  de Diciplinas do
+                        Período Letivo 2023.2</span></h2>
                 </div>
 
                 <div class = "addr-book-top">
@@ -170,12 +142,11 @@
                             <tr>
 
                                 <th>Professor</th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                                <th>Diciplinas</th>
+                                <th>Laboratórios</th>
+                                <th>Craga Horária</th>
+                                <th>AS</th>
+                                <th>Descrição</th>
                                
                             </tr>
                         </thead>
@@ -199,8 +170,7 @@
         
     </div>
 
-    
-
+    <!------------------ Paginação --------------------->
     
     <div class="pagination">
         <div><i class="fa-solid fa-angles-left"></i></div>

@@ -408,173 +408,174 @@ button{
           box-shadow: 0 1px 0 0 #8a1f23;
 }
 
-/* ----------------- Lista de Professores -------------------- */
+/* ----------------- Lista de Diciplia e Professores -------------------- */
 
-.addr-book{
-  padding: 1.4rem;
-  margin: 0 auto;
-  max-width: 1700px;
-  min-width: 700px!important;
-}
-
-.addr-book-content{
-  background-color: var(--cinza);
-  padding: 1.6rem;
-  border-radius: 4px;
-}
-
-.addr-book-head{
-  padding-top: 1.5rem;
-  margin-bottom: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+main.table {
+    width: 90%;
+    height: 100%;
+    margin: 80px;
+    margin-top: 150px;
+    background-color: #fff5;
+    justify-content: center;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
 }
 
-.addr-book-head h2{
-  font-size: 2.2rem;
-  color: var(--AzulEscuro);
-}
-
-.addr-book-head i{
-  color: var(--AzulEscuro);
-  margin-right: 1rem;
-}
-
-.addr-book-top{
-  padding: 1rem 0;
-}
-
-.addr-book-top .btn{
-  color: #fff;
-  padding: 0.8rem;
-  border-radius: 3px;
-  -webkit-transition: all 200ms ease;
-  -o-transition: all 200ms ease;
-  transition: all 200ms ease;
-  background-color: var(--Azul);
-  -webkit-box-shadow: 0 2px 0 0 #00476A;
-          box-shadow: 0 2px 0 0 #00476A;
-}
-
-.addr-book-top .btn:hover {
-  -webkit-transform: translateY(1px);
-      -ms-transform: translateY(1px);
-          transform: translateY(1px);
-  -webkit-box-shadow: 0 1px 0 0 #00476A;
-          box-shadow: 0 1px 0 0 #00476A;
-}
-
-.addr-book-list{
-  margin: 1rem 0;
-  min-height: 450px;
-}
-
-.addr-table{
-  margin-top: 1rem;
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
-  padding: 10px;
-}
-
-.addr-table thead{
-  border-bottom: 1px solid var(--AzulEscuro);
-}
-
-.addr-table thead tr th{
-  padding-bottom: 0.8rem;
-  text-align: center;
-  color: var(--AzulEscuro);
-}
-
-.addr-table thead tr th:hover {
-  color: var(--Azul);
-}
-
-.addr-table tbody td{
-  padding: 1.5rem 0;
-  color: ba(0, 0, 0, 0.6)rg;
-  font-weight: 600;
-}
-
-.addr-table tbody td:nth-child(1){
-  padding-left: 0.5rem;
-  padding-right: 1rem;
-}
-.addr-table tbody td:nth-child(2){
-  font-weight: 800;
-}
-.addr-table .addressing-name{
-  color: var(--AzulEscuro);
-}
-.addr-table .address{
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.6);
-}
-.addr-table tbody td:nth-child(3) span{
-  background-color: var(--light-grey-color);
-  display: inline-block;
-  padding: 0.3rem 0.6rem;
-  border-radius: 8px;
-}
-.addr-table tbody tr{
-  text-align: center;
-  cursor: pointer;
-}
-.addr-table tbody tr:hover{
-  background-color: var(--Azul);
-  -webkit-transition: all 200ms ease;
-  -o-transition: all 200ms ease;
-  transition: all 200ms ease;
-}
-.addr-table tbody tr:hover td, .addr-table tbody tr:hover span{
-  color: #fff;
-}
-.addr-table tbody tr:hover td:nth-child(3) span{
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-/* for error message */
-.errorMsg{
-  border: 1px solid #d33c41!important;
-}
-
-/*--------------- Paginação --------------*/
-
-.pagination {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  padding: 10px 20px;
-  
-}
-
-.pagination:hover {
-  color: var(--Azul);
-}
-
-.pagination div {
-  padding: 10px;
-  border: 2px solid #d5d0d0;
-  height: 40px;
-  width: 40px;
-  border-radius: 100%;
+main.table .titulo-curso {
+  font-size: 18px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--AzulEscuro);
-  color: #ffffff;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
-  margin: 0 5px;
-  cursor: pointer;
+  padding: 10px;
+  color: var(--AzulEscuro);
+}
+
+.table__header {
+    width: 100%;
+    height: 10%;
+    margin: 20px;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__header h1 {
+    font-size: 35px;
+    color: var(--AzulEscuro);
+}
+
+.table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: var(--branco);
+
+    margin: .8rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+}
+
+.table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+    padding: 0;
+    font: 0 / 0 sans-serif;
+    transition: .2s ease-in-out .5s;
+}
+
+@media (max-width: 1000px) {
+    td:not(:first-of-type) {
+        min-width: 12.1rem;
+    }
+}
+
+thead th span.icon-arrow {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    border: 1.4px solid transparent;
+    
+    text-align: center;
+    font-size: 1rem;
+    
+    margin-left: .5rem;
+    transition: .2s ease-in-out;
+}
+
+thead th:hover span.icon-arrow{
+    border: 1.4px solid var(--Azul);
+}
+
+thead th:hover {
+    color: var(--Azul);
+}
+
+/*----------------------- Botão Adicionar -----------------*/
+
+.table__header .btn{
+color: #fff;
+padding: 0.8rem;
+border-radius: 3px;
+margin: 30px;
+-webkit-transition: all 200ms ease;
+-o-transition: all 200ms ease;
+transition: all 200ms ease;
+background-color: var(--Azul);
+-webkit-box-shadow: 0 2px 0 0 #00476A;
+        box-shadow: 0 2px 0 0 #00476A;
+}
+
+.table__header .btn:hover {
+-webkit-transform: translateY(1px);
+    -ms-transform: translateY(1px);
+        transform: translateY(1px);
+-webkit-box-shadow: 0 1px 0 0 #00476A;
+        box-shadow: 0 1px 0 0 #00476A;
 }
 
 /* ----------------------   Footer  ----------------------*/

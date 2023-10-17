@@ -1,3 +1,4 @@
+// -------------------------------------------------- //
 
 // regular expression for validation
 const strRegex =  /^[a-zA-Z\s]*$/; // containing only letters
@@ -18,19 +19,20 @@ const form = document.getElementById('modal');
 const addrBookList = document.querySelector('#addr-book-list tbody');
 
 // -------------------------------------------------- //
-let addrName = diciplinas = laboratorios = cargaHoraria = ass = descricao = "";
+let addrName = diciplinas = laboratoarios = cargaHoraria = ass = descricao = "";
 
 // Address class
 class Address{
-    constructor(id, addrName, diciplinas, laboratorios, cargaHoraria, ass,  descricao){
+    constructor(id, addrName, diciplinas, laboratoarios, cargaHoraria, ass, descricao){
         this.id = id;
         this.addrName = addrName;
         this.diciplinas = diciplinas;
-        this.laboratorios = laboratorios;
+        this.laboratoarios = laboratoarios;
         this.cargaHoraria = cargaHoraria;
         this.ass = ass;
         this.descricao = descricao;
-    
+        
+        
     }
 
     static getAddresses(){
@@ -70,10 +72,11 @@ class Address{
             if(address.id == item.id){
                 address.addrName = item.addrName;
                 address.diciplinas = item.diciplinas;
-                address.laboratorios = item.laboratorios;
+                address.laboratoarios = item.laboratoarios;
                 address.cargaHoraria = item.cargaHoraria;
                 address.ass = item.ass;
                 address.descricao = item.descricao;
+                
                 
             }
         });
@@ -96,10 +99,11 @@ class UI{
         tableRow.innerHTML = `
             <td>${address.addrName}</td>
             <td>${address.diciplinas}</td>
-            <td>${address.laboratorios}</td>
+            <td>${address.laboratoarios}</td>
             <td>${address.cargaHoraria}</td>
             <td>${address.ass}</td>
             <td>${address.descricao}</td>
+            
             
             
         `;
@@ -114,11 +118,12 @@ class UI{
         addresses.forEach(address => {
             if(address.id == id){
                 form.addr_ing_name.value = address.addrName;
-                form.diciplinas_d.value = address.diciplinas;
-                form.laboratorios_l.value = address.laboratorios;
+                form.diciplinas_D.value = address.diciplinas;
+                form.laboratoarios_L.value = address.laboratoarios;
                 form.carga_horaria.value = address.cargaHoraria;
-                form.ass_a.value = address.ass;
-                form.descicao_d.value = address.descricao;
+                form.a_s.value = address.ass;
+                form.descricao_D.value = address.descricao;
+                
                 
                 document.getElementById('modal-title').innerHTML = "Adicionar Professores";
 
@@ -180,7 +185,7 @@ function eventListeners(){
                 let lastItemId = (allItem.length > 0) ? allItem[allItem.length - 1].id : 0;
                 lastItemId++;
 
-                const addressItem = new Address(lastItemId, addrName, diciplinas, laboratorios, cargaHoraria, ass, descricao);
+                const addressItem = new Address(lastItemId, addrName, diciplinas, laboratoarios, cargaHoraria, ass, descricao);
                 Address.addAddress(addressItem);
                 UI.closeModal();
                 UI.addToAddressList(addressItem);
@@ -225,7 +230,7 @@ function eventListeners(){
                     }, 1500);
                 });
             } else {
-                const addressItem = new Address(id, addrName, diciplinas, laboratorios, cargaHoraria, ass, descricao);
+                const addressItem = new Address(id, addrName, diciplinas, laboratoarios, cargaHoraria, ass, descricao);
                 Address.updateAddress(addressItem);
                 UI.closeModal();
                 form.reset();
@@ -255,28 +260,32 @@ function loadJSON(){
 
 function getFormData(){
     let inputValidStatus = [];
-    // console.log(form.addr_ing_name.value, form.first_name.value, form.last_name.value, form.email.value, form.phone.value, form.street_addr.value, form.postal_code.value, form.city.value, form.country.value, form.labels.value);
+    // console.log(form.addr_ing_name.value, form.diciplinas_D.value, form.laboratoarios_L.value, form.carga_horaria.value, form.a_s.value, form.descricao_D.value);
     
     addrName = form.addr_ing_name.value;
+
+    diciplinas = form.diciplinas_D.value;
     
-    diciplinas = form.diciplinas_d.value;
+    laboratoarios = form.laboratoarios_L.value;
     
-    laboratorios = form.laboratorios_l.value;
-   
     cargaHoraria = form.carga_horaria.value;
-    
-    ass_a = form.ass.value;
    
-    descricao = form.descicao_d.value;
+    ass = form.a_s.value;
+    
+    descricao = form.descricao_D.value;
+
+   
+    
 
     return inputValidStatus.includes(false) ? false : true;
 }
+
 
 function addErrMsg(inputBox){
     inputBox.classList.add('errorMsg');
 }
 
-/* ---------------------------------------------------------- */
+/* --------------------------- Pesquisa ------------------------------- */
 
 // search-box open close js code
 let navbar = document.querySelector(".navbar");

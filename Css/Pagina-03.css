@@ -58,7 +58,7 @@ nav .navbar{
 .navbar span {
   color: var(--Azul);
   font-size: 40px;
-  text-shadow: 2px 1px 1px var(--AzulEscuro);
+  
 }
 
 .navbar .logo a{
@@ -66,7 +66,7 @@ nav .navbar{
   color: var(--AzulEscuro);
   text-decoration: none;
   font-weight: 600;
-  text-shadow: 1px 1px 1px var(--AzulEscuro);
+  text-shadow: 2px 1px 1px var(--AzulEscuro);
 }
 
 nav .navbar .nav-links{
@@ -133,7 +133,7 @@ nav .navbar .links li:hover .js-sub-menu{
 }
 
 .navbar .links li .sub-menu li{
-  padding: 0 22px;
+  padding: 0 20px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -146,10 +146,6 @@ nav .navbar .links li:hover .js-sub-menu{
 .navbar .links li .sub-menu .more-arrow{
   line-height: 40px;
 }
-
-/*.navbar .links li .htmlCss-more-sub-menu {
-   line-height: 40px; 
-}*/
 
 .navbar .links li .sub-menu .more-sub-menu{
   position: absolute;
