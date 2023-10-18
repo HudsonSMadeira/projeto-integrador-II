@@ -276,7 +276,7 @@ button{
   overflow: hidden;
   display: none;
   position: fixed;
-  margin-top: 60px;
+  margin-top: 40px;
   top: 2rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -705,6 +705,24 @@ button{
   padding-bottom: 0.8rem;
   text-align: center;
   color: var(--AzulEscuro);
+}
+
+/*-------------- Gráfico ---------------------------*/
+
+.graphBox {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  margin: 20px;
+}
+
+.graphBox .box {
+  position: relative;
+  background: var(--cinza);
+  width: 100%;
+  box-shadow: 2px 7px 25px rgba(0,0,0,0.08);
+  border-radius: 5px;
+  margin-right: 100%;
 }
 
 /* ----------------------   Footer  ----------------------*/

@@ -77,15 +77,15 @@ header {
 }
 
 .btn-talk:hover {
-    color: var(--AzulEscuro);
-    background: transparent;
+    color: var(--branco);
+    background: var(--AzulEscuro);
 }
 
 .home {
     position: relative;
     width: 100%;
-    height: 100vh;
-    background: url('background.jpg');
+    height: 95vh;
+    background: url('Logo3.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -99,19 +99,26 @@ header {
 }
 
 .content h2 {
-    font-size: 3em;
+    font-size: 4em;
+    color: var(--branco);
+    text-shadow: 2px 1px 1px var(--AzulEscuro);
 }
 
 .content h2 span {
-    color: var(--AzulEscuro);
+    color: var(--Azul);
+    text-shadow: 2px 1px 1px var(--AzulEscuro);
 }
 
 .content h4 {
     font-size: 2em;
+    color: var(--branco);
+    text-shadow: 2px 1px 1px var(--AzulEscuro);
 }
 
 .content p {
     padding: 10px 0 40px 0;
+    color: var(--branco);
+    text-shadow: 2px 1px 1px var(--AzulEscuro);
 }
 
 .btn-group a {
@@ -126,8 +133,8 @@ header {
 }
 
 .btn-group a:hover:nth-child(1) {
-    color: var(--AzulEscuro);
-    background: transparent;
+    color: var(--branco);
+    background: var(--AzulEscuro);
 }
 
 /*---------------------   Footer  ----------------------*/

@@ -79,65 +79,82 @@
                 </div>
                 <div class = "modal-main">
                     <div class = "modal-row">
+
                         <div class = "modal-col">
                             <label for="">Professor</label>
                             <input type = "text"  class = "form-control" name = "addr_ing_name">
                         </div>
-                    </div>
 
-                    <div class = "modal-row grid-row">
-                        <div class = "modal-col">
-                            <label for="">Carga Horária</label>
-                            <input type = "number"  class = "form-control" name = "carga_horaria">
-                        </div>
-                        <div class = "modal-col">
-                            <label for="">Ensino</label>
-                            <input type = "number"  class = "form-control" name = "ensino_e">
-                        </div>
-                    </div>
-
-                    <div class = "modal-row grid-row">
-                        <div class = "modal-col">
-                            <label for="">Turmas</label>
-                            <input type = "number"  class = "form-control" name = "turmas_t">
-                        </div>
                         <div class = "modal-col">
                             <label for="">Observações</label>
                             <input type = "text"  class = "form-control" name = "observacoes_o">
                         </div>
+                
                     </div>
 
                     <div class = "modal-row grid-row">
+
+                        <div class = "modal-col">
+                            <label for="">Carga Horária</label>
+                            <input type = "number"  class = "form-control" name = "carga_horaria">
+                        </div>
+                        
+                        <div class = "modal-col">
+                            <label for="">Ensino</label>
+                            <input type = "number"  class = "form-control" name = "ensino_e">
+                        </div>
+
+                    </div>
+
+                    <div class = "modal-row grid-row">
+
+                        <div class = "modal-col">
+                            <label for="">Turmas</label>
+                            <input type = "number"  class = "form-control" name = "turmas_t">
+                        </div>
+
                         <div class = "modal-col">
                             <label for="">Ativ.Didatica/Pedagógica</label>
                             <input type = "number"  class = "form-control" name = "Ativ_Didat_Pedag">
                         </div>
+                        
+                    </div>
+
+                    <div class = "modal-row grid-row">
+                        
                         <div class = "modal-col">
                             <label for="">Orientações</label>
                             <input type = "number"  class = "form-control" name = "orienracoes_o">
                         </div>
-                    </div>
 
-                    <div class = "modal-row grid-row">
                         <div class = "modal-col">
                             <label for="">Ativ.Administrativas</label>
                             <input type = "number"  class = "form-control" name = "ativ_administrativas">
                         </div>
+
+                    </div>
+
+                    <div class = "modal-row grid-row">
+                        
                         <div class = "modal-col">
                             <label for="">Ativ.Representações</label>
                             <input type = "number"  class = "form-control" name = "ativ_representacoes">
                         </div>
-                    </div>
 
-                    <div class = "modal-row grid-row">
                         <div class = "modal-col">
                             <label for="">Ativ.Pesquisa/Extensão</label>
                             <input type = "number"  class = "form-control" name = "ativ_pesquisa_extencao">
                         </div>
+
+                    </div>
+
+                    <div class = "modal-row grid-row">
+                        
                         <div class = "modal-col">
                             <label for="">Capacitação</label>
                             <input type = "number"  class = "form-control" name = "capacitação_c">
                         </div>
+                        
                     </div>
 
                     <div class = "modal-row" id = "modal-btns">
@@ -193,15 +210,14 @@
                         <thead>
                             <tr>
                                 <th>Professor</th>
-                                <th></th>
                                 <th>Carga Horária</th>
                                 <th>Ensino</th>
+                                <th></th>
                                 <th>Turmas</th>
                                 <th>Observações</th>
                                 <th>Ativ.Didático/Pedagógica.</th>
-                                <th>Orientações</th>
-                                <th>Ativ.Administrativas</th>
                                 <th>Ativ.Representações</th>
+                                <th>Ativ.Administrativas</th>
                                 <!--<th>Ativ.Pesquisa/Extensão</th>
                                 <th>Capacitação</th>-->
                             </tr>
@@ -225,27 +241,11 @@
                 </div>
             </div>
 
-            <div class="container-media">
-                <div class="table-media">
-                  <table>
-                    <thead>
-                        <tr>
-                          <th>Média</th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                        </tr>
-                    </thead>
-                  </table>
-                </div>  
-            </div>
-
         </div>
         
+        
+        
     </div>
-
-    
-
     
     <div class="pagination">
         <div><i class="fa-solid fa-angles-left"></i></div>
@@ -254,6 +254,15 @@
         <div>2</div>
         <div><i class="fa-solid fa-chevron-right"></i></div>
         <div><i class="fa-solid fa-angles-right"></i></div>
+    </div>
+
+    <div class="graphBox">
+        <div class="">
+            
+        </div>
+        <div class="box">
+            <canvas id="earning"></canvas>
+        </div>
     </div>
     
 
@@ -329,7 +338,8 @@
             </div>
         </div>
     </footer>
-  
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="Scripts/Pagina-03.js"></script>
 
 </body>

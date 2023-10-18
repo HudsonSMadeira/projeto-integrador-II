@@ -1,5 +1,43 @@
 // -------------------------------------------------- //
 
+// Grafico
+
+const ctx = document.getElementById('myChart');
+const earning = document.getElementById('earning');
+
+
+new Chart(earning, {
+    type: 'line',
+    data: {
+        labels: ['Carga Horária', 'Ensino','Turmas'],
+        datasets: [{
+            label: 'Média',
+            data: [29, 13, 5],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+        Responsive: true
+    }
+});
+
+
 // regular expression for validation
 const strRegex =  /^[a-zA-Z\s]*$/; // containing only letters
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -270,7 +308,7 @@ function loadJSON(){
 
 function getFormData(){
     let inputValidStatus = [];
-    // console.log(form.addr_ing_name.value, form.first_name.value, form.last_name.value, form.email.value, form.phone.value, form.street_addr.value, form.postal_code.value, form.city.value, form.country.value, form.labels.value);
+    // console.log(form.addr_ing_name.value, form.carga_horaria.value, form.ensino_e.value, form.turmas_t.value, form.observacoes_o.value, form.Ativ_Didat_Pedag.value, form.orienracoes_o.value, form.ativ_administrativas.value, form.ativ_representacoes.value, form.ativ_pesquisa_extencao.value, form.capacitação_c.value);
     
     addrName = form.addr_ing_name.value;
     
