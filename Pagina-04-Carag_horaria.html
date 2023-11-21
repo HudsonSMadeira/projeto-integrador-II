@@ -30,24 +30,75 @@
             </div>
             <ul class="links">
                 
-                <li><a href="Pagina-03-inicial.html">Inicio</a></li>
-                <li><a href="Pagina-04-demandas.html">Demandas</a></li>
-                <li><a href="Pagina-05-observações.html">Observações</a></li>
+                <li><a href="Pagina-03-Demandas.html">Demandas</a></li>
+                <li><a href="Pagina-04-Carag_horaria.html">Carag Horaria</a></li>
+                <li><a href="Pagina-05-Observações.html">Observações</a></li>
 
                 <li>
+
                     <a href="#">Turmas e Cursos</a>
+
                     <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+
                     <ul class="htmlCss-sub-menu sub-menu">
+
                         <li class="more">
-                            <span><a href="#">Superior</a>
+
+                            <span class="turmas"><a href="#">Superior</a>
                                 <i class='bx bxs-chevron-right arrow more-arrow'></i>
                             </span>
+
                             <ul class="more-sub-menu sub-menu">
                                 <li><a href="Pagina-06-TADS.html">TADS</a></li>
                                 <li><a href="#">Matemática</a></li>
                                 <li><a href="#">Biologia</a></li>
                             </ul>
+
                         </li>
+
+                        <li class="more">
+
+                            <span class="turmas"><a href="#">Integrado</a>
+                                <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                            </span>
+                            
+                            <ul class="more-sub-menu sub-menu">
+                                <li><a href="#">Edificações</a></li>
+                                <li><a href="#">Eletromecânica</a></li>
+                                <li><a href="#">Informática</a></li>
+                                <li><a href="#">Meio Ambiente</a></li>
+                            </ul>
+
+                        </li>
+
+                        <li class="more">
+
+                            <span class="turmas"><a href="#">Concomitantes</a>
+                                <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                            </span>
+                            
+                            <ul class="more-sub-menu sub-menu">
+                                <li><a href="#">Edificações</a></li>
+                                <li><a href="#">Eletromecânica</a></li>
+                                <li><a href="#">Informática</a></li>
+                            </ul>
+
+                        </li>
+
+                        <li class="more">
+
+                            <span class="turmas"><a href="#">Subsequentes</a>
+                                <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                            </span>
+                            
+                            <ul class="more-sub-menu sub-menu">
+                                <li><a href="#">Edificações</a></li>
+                                <li><a href="#">Eletromecânica</a></li>
+                                <li><a href="#">Informática</a></li>
+                            </ul>
+
+                        </li>
+
                     </ul>
                 </li>   
                 <li><a href="Pagina-01.html">Sair</a></li>
@@ -69,46 +120,99 @@
         
        <!-- form modal -->
         <div id = "fullscreen-div"></div>
+
         <form class = "modal" id = "modal">
+
             <div class = "modal-content">
+
                 <div class = "modal-head">
+
                     <h3 id = "modal-title">Adicionar Professores</h3>
                     <button type="button" id = "close-btn">
                         <i class = "fas fa-times"></i>
                     </button>
+
                 </div>
+
                 <div class = "modal-main">
+                    
                     <div class = "modal-row">
+
                         <div class = "modal-col">
                             <label for="">Professor</label>
                             <input type = "text"  class = "form-control" name = "addr_ing_name">
                         </div>
+
                         <div class = "modal-col">
-                            <label for="">Diciplinas</label>
-                            <input type = "text"  class = "form-control" name = "diciplinas_D">
+                            <label for="">Observações</label>
+                            <input type = "text"  class = "form-control" name = "observacoes_o">
                         </div>
+                
                     </div>
 
                     <div class = "modal-row grid-row">
-                        <div class = "modal-col">
-                            <label for="">Laboratórios</label>
-                            <input type = "text"  class = "form-control" name = "laboratoarios_L">
-                        </div>
+
                         <div class = "modal-col">
                             <label for="">Carga Horária</label>
                             <input type = "number"  class = "form-control" name = "carga_horaria">
                         </div>
+                        
+                        <div class = "modal-col">
+                            <label for="">Ensino</label>
+                            <input type = "number"  class = "form-control" name = "ensino_e">
+                        </div>
+
                     </div>
 
-                    <div class = "modal-row">
+                    <div class = "modal-row grid-row">
+
                         <div class = "modal-col">
-                            <label for="">AS</label>
-                            <input type = "number"  class = "form-control" name = "a_s">
+                            <label for="">Turmas</label>
+                            <input type = "number"  class = "form-control" name = "turmas_t">
                         </div>
+
                         <div class = "modal-col">
-                            <label for="">Descrição</label>
-                            <input type = "text"  class = "form-control" name = "descricao_D">
+                            <label for="">Ativ.Didatica/Pedagógica</label>
+                            <input type = "number"  class = "form-control" name = "Ativ_Didat_Pedag">
                         </div>
+                        
+                    </div>
+
+                    <div class = "modal-row grid-row">
+                        
+                        <div class = "modal-col">
+                            <label for="">Orientações</label>
+                            <input type = "number"  class = "form-control" name = "orienracoes_o">
+                        </div>
+
+                        <div class = "modal-col">
+                            <label for="">Ativ.Administrativas</label>
+                            <input type = "number"  class = "form-control" name = "ativ_administrativas">
+                        </div>
+
+                    </div>
+
+                    <div class = "modal-row grid-row">
+                        
+                        <div class = "modal-col">
+                            <label for="">Ativ.Representações</label>
+                            <input type = "number"  class = "form-control" name = "ativ_representacoes">
+                        </div>
+
+                        <div class = "modal-col">
+                            <label for="">Ativ.Pesquisa/Extensão</label>
+                            <input type = "number"  class = "form-control" name = "ativ_pesquisa_extencao">
+                        </div>
+
+                    </div>
+
+                    <div class = "modal-row grid-row">
+                        
+                        <div class = "modal-col">
+                            <label for="">Capacitação</label>
+                            <input type = "number"  class = "form-control" name = "capacitação_c">
+                        </div>
+                        
                     </div>
 
                     <div class = "modal-row" id = "modal-btns">
@@ -124,9 +228,7 @@
             <div class = "addr-book-content">
                 <div class = "addr-book-head">
                     <i class = "fa-solid fa-address-book fa-2x"></i>
-                    <h2>Demandas<span>  de Diciplinas do
-                        Período Letivo 2023.2</span>
-                    </h2>
+                    <h2>Carga<span> Horária dos Professores</span></h2>
                 </div>
 
                 <div class = "addr-book-top">
@@ -141,26 +243,32 @@
                     <table class = "addr-table">
                         <thead>
                             <tr>
-
                                 <th>Professor</th>
-                                <th>Diciplinas</th>
-                                <th>Laboratórios</th>
-                                <th>Craga Horária</th>
-                                <th>AS</th>
-                                <th>Descrição</th>
-                               
+                                <th>Observações</th>
+                                <th>Carga Horária</th>
+                                <th>Ensino</th>
+                                <th>Turmas</th>
+                                <th>A.D/Pedagógica.</th>
+                                <th>Orientações</th>
+                                <th>A.Administrativas</th>
+                                <th>A.Representações</th>
+                                <th>A.P/Extensão</th>
+                                <th>Capacitação</th>
                             </tr>
                         </thead>
                         <tbody>
                             <!-- <tr> 
-
                                 <tr></tr>
                                 <tr></tr>
                                 <tr></tr>
                                 <tr></tr>
                                 <tr></tr>
                                 <tr></tr>
-                                
+                                <tr></tr>
+                                <tr></tr>
+                                <th></th>
+                                <tr></tr>
+                                <tr></tr>
                             </tr> -->
                         </tbody>
                     </table>   
@@ -169,9 +277,9 @@
 
         </div>
         
+        
+        
     </div>
-
-    <!------------------ Paginação --------------------->
     
     <div class="pagination">
         <div><i class="fa-solid fa-angles-left"></i></div>
@@ -181,8 +289,19 @@
         <div><i class="fa-solid fa-chevron-right"></i></div>
         <div><i class="fa-solid fa-angles-right"></i></div>
     </div>
-    
 
+    <div class="box-text">
+        <h3>Média Geral</h3>
+    </div>
+
+    <div class="graphBox">
+        
+        <div class="box">
+            <canvas id="earning"></canvas>
+        </div>
+
+    </div>
+    
     <!--------------------- Footer --------------------->
 
     <footer>
@@ -255,7 +374,8 @@
             </div>
         </div>
     </footer>
-  
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="Scripts/Pagina-04.js"></script>
 
 </body>

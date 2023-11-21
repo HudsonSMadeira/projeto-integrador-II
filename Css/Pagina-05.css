@@ -61,6 +61,11 @@ nav .navbar{
   font-size: 40px;
 }
 
+.navbar .turmas {
+  color: var(--Azul);
+  font-size: 20px;
+}
+
 .navbar .logo a{
   font-size: 33px;
   color: var(--AzulEscuro);
@@ -139,7 +144,7 @@ nav .navbar .links li:hover .js-sub-menu{
 
 .navbar .links li .sub-menu a{
   color: var(--AzulEscuro);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -464,6 +469,8 @@ button{
 }
 
 .addr-book-top .btn:hover {
+  color: var(--branco);
+  background-color: var(--AzulEscuro);
   -webkit-transform: translateY(1px);
       -ms-transform: translateY(1px);
           transform: translateY(1px);

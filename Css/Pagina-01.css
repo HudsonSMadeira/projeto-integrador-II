@@ -70,15 +70,15 @@ header {
     color: #fff;
     text-decoration: none;
     padding: 8px 35px;
-    background: var(--Azul);
+    background: var(--AzulEscuro);
     border-radius: 10px;
-    border: 2px solid var(--AzulEscuro);
+    border: 2px solid var(--Azul);
     font-weight: 500;
 }
 
 .btn-talk:hover {
-    color: var(--branco);
-    background: var(--AzulEscuro);
+    color: var(--AzulEscuro);
+    background: var(--Azul);
 }
 
 .home {
@@ -125,16 +125,16 @@ header {
     color: #fff;
     text-decoration: none;
     padding: 10px 40px;
-    background: var(--Azul);
+    background: var(--AzulEscuro);
     border-radius: 10px;
-    border: 2px solid var(--AzulEscuro);
+    border: 2px solid var(--Azul);
     font-weight: 500;
-    transition: 1s;
+    transition: 0.1s;
 }
 
 .btn-group a:hover:nth-child(1) {
-    color: var(--branco);
-    background: var(--AzulEscuro);
+    color: var(--AzulEscuro);
+    background: var(--Azul);
 }
 
 /*---------------------   Footer  ----------------------*/
@@ -241,6 +241,7 @@ footer .top .newsletter form button {
 }
 
 footer .top .newsletter form button:hover {
+    color: var(--AzulEscuro);
     background: var(--Azul);
 }
 

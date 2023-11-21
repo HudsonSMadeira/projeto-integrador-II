@@ -19,47 +19,45 @@ const form = document.getElementById('modal');
 const addrBookList = document.querySelector('#addr-book-list tbody');
 
 // -------------------------------------------------- //
-let addrName = diciplinas = laboratoarios = cargaHoraria = ass = descricao = "";
+let addrName = diciplinas = laboratoarios = cargaHoraria = ass = turmas = "";
 
 // Address class
 class Address{
-    constructor(id, addrName, diciplinas, laboratoarios, cargaHoraria, ass, descricao){
+    constructor(id, addrName, diciplinas, laboratoarios, cargaHoraria, ass, turmas){
         this.id = id;
         this.addrName = addrName;
         this.diciplinas = diciplinas;
         this.laboratoarios = laboratoarios;
         this.cargaHoraria = cargaHoraria;
         this.ass = ass;
-        this.descricao = descricao;
-        
-        
+        this.turmas = turmas;
     }
 
     static getAddresses(){
         // from local storage
-        let addresses;
-        if(localStorage.getItem('addresses') == null){
-            addresses = [];
+        let addresses3;
+        if(localStorage.getItem('addresses3') == null){
+            addresses3 = [];
         } else {
-            addresses = JSON.parse(localStorage.getItem('addresses'));
+            addresses3 = JSON.parse(localStorage.getItem('addresses3'));
         }
-        return addresses;
+        return addresses3;
     }
 
     static addAddress(address){
-        const addresses = Address.getAddresses();
-        addresses.push(address);
-        localStorage.setItem('addresses', JSON.stringify(addresses));
+        const addresses3 = Address.getAddresses();
+        addresses3.push(address);
+        localStorage.setItem('addresses3', JSON.stringify(addresses3));
     }
 
     static deleteAddress(id){
-        const addresses = Address.getAddresses();
-        addresses.forEach((address, index) => {
+        const addresses3 = Address.getAddresses();
+        addresses3.forEach((address, index) => {
             if(address.id == id){
-                addresses.splice(index, 1);
+                addresses3.splice(index, 1);
             }
         });
-        localStorage.setItem('addresses', JSON.stringify(addresses));
+        localStorage.setItem('addresses3', JSON.stringify(addresses3));
         form.reset();
         UI.closeModal();
         addrBookList.innerHTML = "";
@@ -67,20 +65,18 @@ class Address{
     }
 
     static updateAddress(item){
-        const addresses = Address.getAddresses();
-        addresses.forEach(address => {
+        const addresses3 = Address.getAddresses();
+        addresses3.forEach(address => {
             if(address.id == item.id){
                 address.addrName = item.addrName;
                 address.diciplinas = item.diciplinas;
                 address.laboratoarios = item.laboratoarios;
                 address.cargaHoraria = item.cargaHoraria;
                 address.ass = item.ass;
-                address.descricao = item.descricao;
-                
-                
+                address.turmas = item.turmas;
             }
         });
-        localStorage.setItem('addresses', JSON.stringify(addresses));
+        localStorage.setItem('addresses3', JSON.stringify(addresses3));
         addrBookList.innerHTML = "";
         UI.showAddressList();
     }
@@ -89,8 +85,8 @@ class Address{
 // UI class
 class UI{
     static showAddressList(){
-        const addresses = Address.getAddresses();
-        addresses.forEach(address => UI.addToAddressList(address));
+        const addresses3 = Address.getAddresses();
+        addresses3.forEach(address => UI.addToAddressList(address));
     }
 
     static addToAddressList(address){
@@ -102,10 +98,7 @@ class UI{
             <td>${address.laboratoarios}</td>
             <td>${address.cargaHoraria}</td>
             <td>${address.ass}</td>
-            <td>${address.descricao}</td>
-            
-            
-            
+            <td>${address.turmas}</td>        
         `;
         addrBookList.appendChild(tableRow);
 
@@ -114,17 +107,16 @@ class UI{
     }
 
     static showModalData(id){
-        const addresses = Address.getAddresses();
-        addresses.forEach(address => {
+        const addresses3 = Address.getAddresses();
+        addresses3.forEach(address => {
             if(address.id == id){
                 form.addr_ing_name.value = address.addrName;
                 form.diciplinas_D.value = address.diciplinas;
                 form.laboratoarios_L.value = address.laboratoarios;
                 form.carga_horaria.value = address.cargaHoraria;
                 form.a_s.value = address.ass;
-                form.descricao_D.value = address.descricao;
-                
-                
+                form.turmas_t.value = address.turmas;
+                         
                 document.getElementById('modal-title').innerHTML = "Adicionar Professores";
 
                 document.getElementById('modal-btns').innerHTML = `
@@ -185,7 +177,7 @@ function eventListeners(){
                 let lastItemId = (allItem.length > 0) ? allItem[allItem.length - 1].id : 0;
                 lastItemId++;
 
-                const addressItem = new Address(lastItemId, addrName, diciplinas, laboratoarios, cargaHoraria, ass, descricao);
+                const addressItem = new Address(lastItemId, addrName, diciplinas, laboratoarios, cargaHoraria, ass, turmas);
                 Address.addAddress(addressItem);
                 UI.closeModal();
                 UI.addToAddressList(addressItem);
@@ -230,7 +222,7 @@ function eventListeners(){
                     }, 1500);
                 });
             } else {
-                const addressItem = new Address(id, addrName, diciplinas, laboratoarios, cargaHoraria, ass, descricao);
+                const addressItem = new Address(id, addrName, diciplinas, laboratoarios, cargaHoraria, ass, turmas);
                 Address.updateAddress(addressItem);
                 UI.closeModal();
                 form.reset();
@@ -272,10 +264,7 @@ function getFormData(){
    
     ass = form.a_s.value;
     
-    descricao = form.descricao_D.value;
-
-   
-    
+    turmas = form.turmas_t.value;
 
     return inputValidStatus.includes(false) ? false : true;
 }
