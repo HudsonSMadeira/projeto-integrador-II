@@ -1,43 +1,5 @@
 // -------------------------------------------------- //
 
-// Grafico
-
-const ctx = document.getElementById('myChart');
-const earning = document.getElementById('earning');
-
-
-new Chart(earning, {
-    type: 'line',
-    data: {
-        labels: ['Carga Horária', 'Ensino','Turmas'],
-        datasets: [{
-            label: 'Média',
-            data: [29, 13, 5],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 2
-        }]
-    },
-    options: {
-        Responsive: true
-    }
-});
-
-
 // regular expression for validation
 const strRegex =  /^[a-zA-Z\s]*$/; // containing only letters
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -57,50 +19,45 @@ const form = document.getElementById('modal');
 const addrBookList = document.querySelector('#addr-book-list tbody');
 
 // -------------------------------------------------- //
-let addrName = cargaHoraria = observacoes = ensino = turmas  = ativDidapedag = orienracoes = ativAdministrativas = ativRepresentacoes = ativPesquisaExtencao = capacitação = "";
+let addrName = diciplinas = laboratoarios = cargaHoraria = ass = turmas = "";
 
 // Address class
 class Address{
-    constructor(id, addrName, observacoes, cargaHoraria, ensino, turmas,  ativDidapedag, orienracoes, ativAdministrativas, ativRepresentacoes, ativPesquisaExtencao, capacitação){
+    constructor(id, addrName, diciplinas, laboratoarios, cargaHoraria, ass, turmas){
         this.id = id;
         this.addrName = addrName;
-        this.observacoes = observacoes;
+        this.diciplinas = diciplinas;
+        this.laboratoarios = laboratoarios;
         this.cargaHoraria = cargaHoraria;
-        this.ensino = ensino;
+        this.ass = ass;
         this.turmas = turmas;
-        this.ativDidapedag = ativDidapedag;
-        this.orienracoes = orienracoes;
-        this.ativAdministrativas = ativAdministrativas;
-        this.ativRepresentacoes = ativRepresentacoes;
-        this.ativPesquisaExtencao = ativPesquisaExtencao;
-        this.capacitação = capacitação;
     }
 
     static getAddresses(){
         // from local storage
-        let addresses2;
-        if(localStorage.getItem('addresses2') == null){
-            addresses2 = [];
+        let addresses1;
+        if(localStorage.getItem('addresses1') == null){
+            addresses1 = [];
         } else {
-            addresses2 = JSON.parse(localStorage.getItem('addresses2'));
+            addresses1 = JSON.parse(localStorage.getItem('addresses1'));
         }
-        return addresses2;
+        return addresses1;
     }
 
     static addAddress(address){
-        const addresses2 = Address.getAddresses();
-        addresses2.push(address);
-        localStorage.setItem('addresses2', JSON.stringify(addresses2));
+        const addresses1 = Address.getAddresses();
+        addresses1.push(address);
+        localStorage.setItem('addresses1', JSON.stringify(addresses1));
     }
 
     static deleteAddress(id){
-        const addresses2 = Address.getAddresses();
-        addresses2.forEach((address, index) => {
+        const addresses1 = Address.getAddresses();
+        addresses1.forEach((address, index) => {
             if(address.id == id){
-                addresses2.splice(index, 1);
+                addresses1.splice(index, 1);
             }
         });
-        localStorage.setItem('addresses2', JSON.stringify(addresses2));
+        localStorage.setItem('addresses1', JSON.stringify(addresses1));
         form.reset();
         UI.closeModal();
         addrBookList.innerHTML = "";
@@ -108,23 +65,19 @@ class Address{
     }
 
     static updateAddress(item){
-        const addresses2 = Address.getAddresses();
-        addresses2.forEach(address => {
+        const addresses1 = Address.getAddresses();
+        addresses1.forEach(address => {
             if(address.id == item.id){
                 address.addrName = item.addrName;
-                address.observacoes = item.observacoes;
+                address.diciplinas = item.diciplinas;
+                address.laboratoarios = item.laboratoarios;
                 address.cargaHoraria = item.cargaHoraria;
-                address.ensino = item.ensino;
-                address.turmas = item.turmas;
-                address.ativDidapedag = item.ativDidapedag;
-                address.orienracoes = item.orienracoes;
-                address.ativAdministrativas = item.ativAdministrativas;
-                address.ativRepresentacoes = item.ativRepresentacoes;
-                address.ativPesquisaExtencao = item.ativPesquisaExtencao;
-                address.capacitação = item.capacitação;
+                address.ass = item.ass;
+                address.turmas = item.turmas;       
+                
             }
         });
-        localStorage.setItem('addresses2', JSON.stringify(addresses2));
+        localStorage.setItem('addresses1', JSON.stringify(addresses1));
         addrBookList.innerHTML = "";
         UI.showAddressList();
     }
@@ -133,8 +86,8 @@ class Address{
 // UI class
 class UI{
     static showAddressList(){
-        const addresses2 = Address.getAddresses();
-        addresses2.forEach(address => UI.addToAddressList(address));
+        const addresses1 = Address.getAddresses();
+        addresses1.forEach(address => UI.addToAddressList(address));
     }
 
     static addToAddressList(address){
@@ -142,16 +95,12 @@ class UI{
         tableRow.setAttribute('data-id', address.id);
         tableRow.innerHTML = `
             <td>${address.addrName}</td>
-            <td>${address.observacoes}</td>
+            <td>${address.diciplinas}</td>
+            <td>${address.laboratoarios}</td>
             <td>${address.cargaHoraria}</td>
-            <td>${address.ensino}</td>
-            <td>${address.turmas}</td> 
-            <td>${address.ativDidapedag}</td>
-            <td>${address.orienracoes}</td>
-            <td>${address.ativAdministrativas}</td>
-            <td>${address.ativRepresentacoes}</td>
-            <td>${address.ativPesquisaExtencao}</td>
-            <td>${address.capacitação}</td>
+            <td>${address.ass}</td>
+            <td>${address.turmas}</td>          
+            
         `;
         addrBookList.appendChild(tableRow);
 
@@ -160,20 +109,17 @@ class UI{
     }
 
     static showModalData(id){
-        const addresses2 = Address.getAddresses();
-        addresses2.forEach(address => {
+        const addresses1 = Address.getAddresses();
+        addresses1.forEach(address => {
             if(address.id == id){
                 form.addr_ing_name.value = address.addrName;
-                form.observacoes_o.value = address.observacoes;
+                form.diciplinas_D.value = address.diciplinas;
+                form.laboratoarios_L.value = address.laboratoarios;
                 form.carga_horaria.value = address.cargaHoraria;
-                form.ensino_e.value = address.ensino;
+                form.a_s.value = address.ass;
                 form.turmas_t.value = address.turmas;
-                form.Ativ_Didat_Pedag.value = address.ativDidapedag;
-                form.orienracoes_o.value = address.orienracoes;
-                form.ativ_administrativas.value = address.ativAdministrativas;
-                form.ativ_representacoes.value = address.ativRepresentacoes;
-                form.ativ_pesquisa_extencao.value = address.ativPesquisaExtencao;
-                form.capacitação_c.value = address.capacitação;
+                
+                
                 document.getElementById('modal-title').innerHTML = "Adicionar Professores";
 
                 document.getElementById('modal-btns').innerHTML = `
@@ -234,7 +180,7 @@ function eventListeners(){
                 let lastItemId = (allItem.length > 0) ? allItem[allItem.length - 1].id : 0;
                 lastItemId++;
 
-                const addressItem = new Address(lastItemId, addrName, observacoes, cargaHoraria, ensino, turmas,  ativDidapedag, orienracoes, ativAdministrativas, ativRepresentacoes, ativPesquisaExtencao, capacitação);
+                const addressItem = new Address(lastItemId, addrName, diciplinas, laboratoarios, cargaHoraria, ass, turmas);
                 Address.addAddress(addressItem);
                 UI.closeModal();
                 UI.addToAddressList(addressItem);
@@ -279,7 +225,7 @@ function eventListeners(){
                     }, 1500);
                 });
             } else {
-                const addressItem = new Address(id, addrName, observacoes, cargaHoraria, ensino, turmas, ativDidapedag, orienracoes, ativAdministrativas, ativRepresentacoes, ativPesquisaExtencao, capacitação);
+                const addressItem = new Address(id, addrName, diciplinas, laboratoarios, cargaHoraria, ass, turmas);
                 Address.updateAddress(addressItem);
                 UI.closeModal();
                 form.reset();
@@ -309,29 +255,20 @@ function loadJSON(){
 
 function getFormData(){
     let inputValidStatus = [];
-    // console.log(form.addr_ing_name.value, form.carga_horaria.value, form.ensino_e.value, form.turmas_t.value, form.observacoes_o.value, form.Ativ_Didat_Pedag.value, form.orienracoes_o.value, form.ativ_administrativas.value, form.ativ_representacoes.value, form.ativ_pesquisa_extencao.value, form.capacitação_c.value);
+    // console.log(form.addr_ing_name.value, form.diciplinas_D.value, form.laboratoarios_L.value, form.carga_horaria.value, form.a_s.value, form.descricao_D.value);
     
     addrName = form.addr_ing_name.value;
 
-    observacoes = form.observacoes_o.value;
+    diciplinas = form.diciplinas_D.value;
+    
+    laboratoarios = form.laboratoarios_L.value;
     
     cargaHoraria = form.carga_horaria.value;
-    
-    ensino = form.ensino_e.value;
    
+    ass = form.a_s.value;
+    
     turmas = form.turmas_t.value;
    
-    ativDidapedag = form.Ativ_Didat_Pedag.value;
-    
-    orienracoes = form.orienracoes_o.value;
-    
-    ativAdministrativas = form.ativ_administrativas.value;
-    
-    ativRepresentacoes = form.ativ_representacoes.value;
-
-    ativPesquisaExtencao = form.ativ_pesquisa_extencao.value;
-
-    capacitação = form.capacitação_c.value;
 
     return inputValidStatus.includes(false) ? false : true;
 }
@@ -341,7 +278,7 @@ function addErrMsg(inputBox){
     inputBox.classList.add('errorMsg');
 }
 
-/* ---------------------------------------------------------- */
+/* --------------------------- Pesquisa ------------------------------- */
 
 // search-box open close js code
 let navbar = document.querySelector(".navbar");

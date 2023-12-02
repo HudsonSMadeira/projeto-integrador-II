@@ -44,7 +44,6 @@ nav{
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   z-index: 99;
 }
-
 nav .navbar{
   height: 100%;
   max-width: 1250px;
@@ -59,6 +58,7 @@ nav .navbar{
 .navbar span {
   color: var(--Azul);
   font-size: 40px;
+  
 }
 
 .navbar .turmas {
@@ -138,7 +138,7 @@ nav .navbar .links li:hover .js-sub-menu{
 }
 
 .navbar .links li .sub-menu li{
-  padding: 0 22px;
+  padding: 0 20px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -151,10 +151,6 @@ nav .navbar .links li:hover .js-sub-menu{
 .navbar .links li .sub-menu .more-arrow{
   line-height: 40px;
 }
-
-/*.navbar .links li .htmlCss-more-sub-menu {
-   line-height: 40px; 
-}*/
 
 .navbar .links li .sub-menu .more-sub-menu{
   position: absolute;
@@ -285,7 +281,7 @@ button{
   overflow: hidden;
   display: none;
   position: fixed;
-  margin-top: 60px;
+  margin-top: 40px;
   top: 2rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -457,7 +453,7 @@ button{
 }
 
 .addr-book-top .btn{
-  color: #fff;
+  color: var(--branco);
   padding: 0.8rem;
   border-radius: 3px;
   -webkit-transition: all 200ms ease;
@@ -478,31 +474,6 @@ button{
           box-shadow: 0 1px 0 0 #00476A;
 }
 
-.addr-book-top .btn-down {
-  display: flex;
-  color: #fff;
-  padding: 0.8rem;
-  border-radius: 3px;
-  margin-top: 15px;
-  -webkit-transition: all 200ms ease;
-  -o-transition: all 200ms ease;
-  transition: all 200ms ease;
-  background-color: var(--Azul);
-  -webkit-box-shadow: 0 2px 0 0 #00476A;
-  box-shadow: 0 2px 0 0 #00476A;
-  justify-content: flex-end;
-}
-
-.addr-book-top .btn-down:hover {
-  color: var(--branco);
-  background-color: var(--AzulEscuro);
-  -webkit-transform: translateY(1px);
-      -ms-transform: translateY(1px);
-          transform: translateY(1px);
-  -webkit-box-shadow: 0 1px 0 0 #00476A;
-          box-shadow: 0 1px 0 0 #00476A;
-}
-
 .addr-book-list{
   margin: 1rem 0;
   min-height: 450px;
@@ -513,7 +484,7 @@ button{
   width: 100%;
   text-align: center;
   border-collapse: collapse;
-  padding: 10px;
+  padding: 15px;
 }
 
 .addr-table thead{
@@ -579,100 +550,6 @@ button{
   border: 1px solid #d33c41!important;
 }
 
-/*--------------  chek box -----------------------*/
-
-.container-chek{
-  position: relative;
-  max-width: 320px;
-  width: 100%;
-  margin: 80px auto 30px;
-}
-.select-btn-chek{
-  display: flex;
-  height: 50px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-.select-btn-chek .btn-text{
-  font-size: 17px;
-  font-weight: 400;
-  color: #333;
-}
-.select-btn-chek .arrow-dwn{
-  display: flex;
-  height: 21px;
-  width: 21px;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 50%;
-  background: var(--AzulEscuro);
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-.select-btn-chek.open .arrow-dwn{
-  transform: rotate(-180deg);
-}
-.list-items-chek{
-  position: relative;
-  margin-top: 15px;
-  border-radius: 8px;
-  padding: 16px;
-  background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  display: none;
-}
-.select-btn-chek.open ~ .list-items-chek{
-  display: block;
-}
-.list-items-chek .item-chek{
-  display: flex;
-  align-items: center;
-  list-style: none;
-  height: 50px;
-  cursor: pointer;
-  transition: 0.3s;
-  padding: 0 15px;
-  border-radius: 8px;
-}
-.list-items-chek .item-chek:hover{
-  background-color: #e7edfe;
-}
-.item .item-text-chek{
-  font-size: 16px;
-  font-weight: 400;
-  color: #333;
-}
-.item-chek .checkbox{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 16px;
-  width: 16px;
-  border-radius: 4px;
-  margin-right: 12px;
-  border: 1.5px solid #c0c0c0;
-  transition: all 0.3s ease-in-out;
-}
-.item-chek.checked .checkbox{
-  background-color: var(--Azul);
-  border-color: var(--Azul);
-}
-.checkbox .check-icon{
-  color: #fff;
-  font-size: 11px;
-  transform: scale(0);
-  transition: all 0.2s ease-in-out;
-}
-.item-chek.checked .check-icon{
-  transform: scale(1);
-}
-
 /*--------------- Paginação --------------*/
 
 .pagination {
@@ -700,7 +577,54 @@ button{
   color: #ffffff;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
   margin: 0 5px;
+  margin-top: 60px;
   cursor: pointer;
+}
+
+/*------------- Média -------------------*/
+
+.container-media {
+  display: flex;
+  border-radius: 6px;
+  margin-top: 20px;
+  margin: 15px;
+  padding: 15px;
+  background-color: var(--cinza);
+  align-items: center;
+}
+
+.container-media .table-media {
+  padding-bottom: 0.8rem;
+  text-align: center;
+  color: var(--AzulEscuro);
+}
+
+/*-------------- Gráfico ---------------------------*/
+
+.box-text {
+  position: relative;
+  display: flex;
+  font-size: 20px;
+  color: var(--AzulEscuro);
+  justify-content: center;
+  padding: 15px;
+}
+
+.graphBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700px; 
+  margin: 0 auto; 
+}
+
+.graphBox .box {
+  position: relative;
+  background: var(--cinzaClaro);
+  width: 100%;
+  box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin: 0;
 }
 
 /* ----------------------   Footer  ----------------------*/
