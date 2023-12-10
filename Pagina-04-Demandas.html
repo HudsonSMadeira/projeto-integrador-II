@@ -32,7 +32,36 @@
                 
                 <li><a href="Pagina-03-Carag_horaria.html">Carga Horária</a></li>
                 <li><a href="Pagina-04-Demandas.html">Demandas</a></li>
-                <li><a href="Pagina-05-Observações.html">Observações</a></li>
+
+                <li>
+                    
+                    <li>
+                        <a href="#">Cadastros</a>
+
+                        <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+
+                        <ul class="htmlCss-sub-menu sub-menu">
+
+                            <li class="more">
+
+                                <span class="turmas"><a href="Pagina-07-CadProfessor.html">Professores</a>
+                                    <i class=''></i>
+                                </span>
+
+                            </li>
+
+                            <li class="more">
+
+                                <span class="turmas"><a href="Pagina-07-CadProfessor.html">Disciplinas</a>
+                                    <i class=''></i>
+                                </span>
+
+                            </li>
+                            
+                        </ul>
+                    </li> 
+                    
+                </li>
 
                 <li>
                     <a href="#">Turmas e Cursos</a>
@@ -140,12 +169,39 @@
                     <div class = "modal-row">
 
                         <div class = "modal-col">
-                            <label for="">Professor</label>
-                            <input type = "text"  class = "form-control" name = "addr_ing_name">
+
+                            <article>
+                                <label for="">Professor</label>
+                                <input type = "text"  class = "form-control" id="two" list="professores" placeholder="Nome do professor..." name = "addr_ing_name">
+
+                                <datalist id="professores">
+                                    <option value="André Francisco Coelho Castro">
+                                    <option value="Francisco Eduardo Pires de Morais">
+                                    <option value="Rafael Ângelo Santos Leite">
+                                    <option value="Willamys Rangel Nunes de Sousa">
+                                    <option value="Rennê Stephany Ferreira dos Santos">
+                                    <option value="Programação para Intenrt IIs">
+                                    <option value="Robson Almeida Borges de Freitas">
+                                </datalist>
+                            </article>
                         </div>
+
                         <div class = "modal-col">
-                            <label for="">Diciplinas</label>
-                            <input type = "text"  class = "form-control" name = "diciplinas_D">
+                            <article>
+                                <label for="">Disciplinas</label>
+                                <input type = "text"  class = "form-control" id="two" list="disciplinas" placeholder="Nome da disciplina..." name = "diciplinas_D">
+                        
+                                <datalist id="disciplinas">
+                                    <option value="Analise e Projeto de Sistemas">
+                                    <option value="Introdução a Administração">
+                                    <option value="Egenharia de Software III">
+                                    <option value="Redes de Computadores">
+                                    <option value="Projeto Integrador II">
+                                    <option value="Programação para Intenrt II">
+                                    <option value="">
+                                </datalist>
+                            </article>
+
                         </div>
 
                     </div>
@@ -153,25 +209,49 @@
                     <div class = "modal-row grid-row">
 
                         <div class = "modal-col">
+
                             <label for="">Laboratórios</label>
-                            <input type = "text"  class = "form-control" name = "laboratoarios_L">
-                        </div>
-                        <div class = "modal-col">
-                            <label for="">Carga Horária</label>
-                            <input type = "number"  class = "form-control" name = "carga_horaria">
+                            <input type = "radio"  id="sim" class = "form-control" name = "laboratoarios_L" value="Sim">
+                            <label for="sim">Sim</label>
+                            <input type = "radio"  id="nao" class = "form-control" name = "laboratoarios_L" value="Nao">
+                            <label for="nao">Não</label>
+
                         </div>
 
                     </div>
 
-                    <div class = "modal-row">
+                    <div class = "modal-row grid-row">
 
                         <div class = "modal-col">
+
+                            <label for="">Carga Horária</label>
+                            <input type = "number"  class = "form-control" name = "carga_horaria">
+
                             <label for="">Aulas Semanais</label>
                             <input type = "number"  class = "form-control" name = "a_s">
+
                         </div>
+
                         <div class = "modal-col">
+                            
                             <label for="">Turma</label>
-                            <input type = "text"  class = "form-control" name = "turmas_t">
+                            <input type = "number"  class = "form-control" name = "descricao_D">
+
+                            <article>
+                                <label for="">Ano - semestre</label>
+                                <input type = "text"  class = "form-control" id="two" list="ano" placeholder="Ano e Semestre..." name = "descricao_D">
+
+                                <datalist id="ano">
+                                    <option value="2023.2">
+                                    <option value="2023.1">
+                                    <option value="2022.2">
+                                    <option value="2022.1">
+                                    <option value="2021.2">
+                                    <option value="2021.1">
+                                    <option value="">
+                                </datalist>
+                            </article>
+
                         </div>
 
                     </div>
